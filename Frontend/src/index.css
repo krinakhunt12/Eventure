@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* index.css or global CSS file */
+:root {
+    --primary-bg-color: #e3f2fd; /* You can change this to your preferred color */
+    --primary-bg-dark-color: #1565c0; 
+    --secondary-bg-color: #e3f2fd;
+    --primary-text-color: #1565c0;
+    --secondary-text-color: #2196f3;
+    --primary-button-color: #1565c0;
+    --primary-button-hover-color: #1565c0;
+    --primary-button-text-color: #ffffff;
+    --primary-border-color: #1565c0;
+    --primary-border-hover-color: #1565c0;
+    --primary-border-text-color: #ffffff;
+    --primary-border-hover-text-color: #ffffff;
+    --primary-border-hover-bg-color: #90caf9;
+    --primary-border-hover-bg-text-color: #ffffff;
+    --primary-border-hover-bg-text-color: #ffffff;
+  }
+
+.bg-primary {
+    background-color: var(--primary-bg-color);
+}
+
+.bg-secondary {
+    background-color: var(--secondary-bg-color);
+}
+
+.bg-dark {
+    background-color: var(--primary-bg-dark-color);
+}
+
+.text-primary {
+    color: var(--primary-text-color);
+}
+
+.text-secondary {
+    color: var(--secondary-text-color);
+}
+
+.bg-primary-button {
+    background-color: var(--primary-button-color);
+}
+
+.border-primary {
+    border-color: var(--primary-border-color);
+}
+
+.border-primary-hover {
+    background-color: var(--primary-border-hover-color);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide ::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+  
