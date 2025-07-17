@@ -54,7 +54,7 @@ const CHART_DATA = [
 const STATUS_COLORS = {
   Approved: "bg-[#B6E2D3] text-secondary",
   Pending: "bg-yellow-100 text-yellow-700",
-  Completed: "bg-[#E0E7EA] text-[#4A4A4A]",
+  Completed: "bg-[#E0E7EA] text-secondary",
 };
 
 const OrganizerDashboard = () => {
@@ -107,7 +107,7 @@ const OrganizerDashboard = () => {
                 </div>
                 <a 
                   href="/create-event" 
-                  className="flex items-center justify-center px-4 py-2 bg-primary-button text-white rounded-lg mt-3 sm:mt-0 hover:bg-[#2a6168] transition"
+                  className="flex items-center justify-center px-4 py-2 bg-primary-button text-white rounded-lg mt-3 sm:mt-0 hover:bg-primary-button transition"
                 >
                   <FaPlus className="w-4 h-4 mr-2" />
                   Create New

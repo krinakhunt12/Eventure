@@ -26,17 +26,17 @@ const NewsletterSection = () => {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#23424A] mb-4 font-['ClashDisplay'] tracking-tight">
-              NEVER MISS A <span className="text-[#4A4A4A]">CAMPUS EVENT</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-['ClashDisplay'] tracking-tight">
+              NEVER MISS A <span className="text-secondary">CAMPUS EVENT</span>
             </h2>
-            <div className="w-24 h-1 bg-[#2a6168] mb-6 md:mx-0 mx-auto"></div>
-            <p className="text-lg text-[#4A4A4A] mb-8 font-['Satoshi']">
+            <div className="w-24 h-1 bg-primary-button mb-6 md:mx-0 mx-auto"></div>
+            <p className="text-lg text-secondary mb-8 font-['Satoshi']">
               Subscribe to our newsletter and stay updated with all the exciting events, workshops, and activities happening across campus.
             </p>
             
             <div className="mb-8">
-              <h3 className="text-xl font-semibold text-[#23424A] mb-4 font-['ClashDisplay']">WHAT YOU'LL GET:</h3>
-              <ul className="space-y-3 text-[#4A4A4A]/90 font-['Satoshi']">
+              <h3 className="text-xl font-semibold text-primary mb-4 font-['ClashDisplay']">WHAT YOU'LL GET:</h3>
+              <ul className="space-y-3 text-secondary/90 font-['Satoshi']">
                 <li className="flex items-start">
                   <FiCheckCircle className="text-[#2a6168] mt-1 mr-3 flex-shrink-0" />
                   <span>Weekly event digests</span>
@@ -57,13 +57,13 @@ const NewsletterSection = () => {
             </div>
             
             <div className="flex justify-center md:justify-start space-x-5">
-              <a href="#" className="text-[#4A4A4A]/80 hover:text-[#2a6168] transition-colors" aria-label="Follow us on Twitter">
+              <a href="#" className="text-secondary/80 hover:text-[#2a6168] transition-colors" aria-label="Follow us on Twitter">
                 <FaTwitter size={22} />
               </a>
-              <a href="#" className="text-[#4A4A4A]/80 hover:text-[#2a6168] transition-colors" aria-label="Follow us on Instagram">
+              <a href="#" className="text-secondary/80 hover:text-[#2a6168] transition-colors" aria-label="Follow us on Instagram">
                 <FaInstagram size={22} />
               </a>
-              <a href="#" className="text-[#4A4A4A]/80 hover:text-[#2a6168] transition-colors" aria-label="Follow us on LinkedIn">
+              <a href="#" className="text-secondary/80 hover:text-[#2a6168] transition-colors" aria-label="Follow us on LinkedIn">
                 <FaLinkedin size={22} />
               </a>
             </div>
@@ -74,13 +74,13 @@ const NewsletterSection = () => {
             {submitted ? (
               <div className="text-center py-8">
                 <FiCheckCircle className="text-[#2a6168] w-14 h-14 mx-auto mb-5" />
-                <h3 className="text-2xl font-bold text-[#23424A] mb-3 font-['ClashDisplay']">THANK YOU!</h3>
-                <p className="text-[#4A4A4A]/90 mb-6 font-['Satoshi']">
+                <h3 className="text-2xl font-bold text-primary mb-3 font-['ClashDisplay']">THANK YOU!</h3>
+                <p className="text-secondary/90 mb-6 font-['Satoshi']">
                   You've been successfully subscribed to our newsletter.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="text-[#2a6168] hover:text-[#23424A] font-medium transition-colors font-['Satoshi']"
+                  className="text-[#2a6168] hover:text-primary font-medium transition-colors font-['Satoshi']"
                 >
                   Subscribe another email
                 </button>
@@ -88,14 +88,14 @@ const NewsletterSection = () => {
             ) : (
               <>
                 <div className="flex items-center justify-center mb-6">
-                  <div className="bg-[#2a6168]/10 p-4 rounded-full">
+                  <div className="bg-primary-button/10 p-4 rounded-full">
                     <FiMail className="text-[#2a6168] w-8 h-8" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-center text-[#23424A] mb-4 font-['ClashDisplay']">
+                <h3 className="text-2xl font-bold text-center text-primary mb-4 font-['ClashDisplay']">
                   JOIN OUR COMMUNITY
                 </h3>
-                <p className="text-[#4A4A4A]/90 text-center mb-6 font-['Satoshi']">
+                <p className="text-secondary/90 text-center mb-6 font-['Satoshi']">
                   Enter your email to receive our weekly newsletter with all campus updates.
                 </p>
                 <form onSubmit={handleSubmit}>
@@ -111,12 +111,12 @@ const NewsletterSection = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-[#2a6168] hover:bg-[#23424A] text-white py-3 rounded-xl font-medium font-['Satoshi'] transition-colors shadow-md hover:shadow-lg"
+                    className="w-full bg-primary-button hover:bg-[#23424A] text-white py-3 rounded-xl font-medium font-['Satoshi'] transition-colors shadow-md hover:shadow-lg"
                   >
                     Subscribe Now
                   </button>
                 </form>
-                <p className="text-xs text-[#4A4A4A]/70 mt-4 text-center font-['Satoshi']">
+                <p className="text-xs text-secondary/70 mt-4 text-center font-['Satoshi']">
                   We respect your privacy. Unsubscribe at any time.
                 </p>
               </>

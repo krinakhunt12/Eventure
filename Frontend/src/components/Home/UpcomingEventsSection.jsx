@@ -51,11 +51,11 @@ const UpcomingEventsSection = () => (
     <div className="max-w-7xl mx-auto px-6 relative z-10">
       {/* Section Header with custom font */}
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#23424A] mb-4 font-['ClashDisplay'] tracking-tight">
-          UPCOMING <span className="text-[#4A4A4A]">EVENTS</span>
+        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-['ClashDisplay'] tracking-tight">
+          UPCOMING <span className="text-secondary">EVENTS</span>
         </h2>
-        <div className="w-24 h-1 bg-[#2a6168] mx-auto mb-6"></div>
-        <p className="text-lg text-[#4A4A4A] max-w-3xl mx-auto font-['Satoshi']">
+        <div className="w-24 h-1 bg-primary-button mx-auto mb-6"></div>
+        <p className="text-lg text-secondary max-w-3xl mx-auto font-['Satoshi']">
           Discover exciting events happening soon. Join us for unforgettable experiences!
         </p>
       </div>
@@ -83,45 +83,45 @@ const UpcomingEventsSection = () => (
             {/* Event Content */}
             <div className="p-6 flex-1 flex flex-col">
               <div className="flex justify-between items-start mb-3">
-                <h3 className="text-xl font-bold text-[#23424A] group-hover:text-[#2a6168] transition-colors font-['ClashDisplay']">
+                <h3 className="text-xl font-bold text-primary group-hover:text-[#2a6168] transition-colors font-['ClashDisplay']">
                   {event.title}
                 </h3>
-                <span className="bg-[#2a6168]/10 text-[#2a6168] text-xs font-medium px-2.5 py-0.5 rounded font-['Satoshi']">
+                <span className="bg-primary-button/10 text-[#2a6168] text-xs font-medium px-2.5 py-0.5 rounded font-['Satoshi']">
                   {event.seats} seats left
                 </span>
               </div>
               
               {/* Event Details */}
               <div className="space-y-2 mb-4 font-['Satoshi']">
-                <div className="flex items-center text-[#4A4A4A]/90">
+                <div className="flex items-center text-secondary/90">
                   <FaCalendarAlt className="mr-2 text-[#2a6168]" />
                   <span>{new Date(event.date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</span>
                 </div>
-                <div className="flex items-center text-[#4A4A4A]/90">
+                <div className="flex items-center text-secondary/90">
                   <FaClock className="mr-2 text-[#2a6168]" />
                   <span>{event.time}</span>
                 </div>
-                <div className="flex items-center text-[#4A4A4A]/90">
+                <div className="flex items-center text-secondary/90">
                   <FaMapMarkerAlt className="mr-2 text-[#2a6168]" />
                   <span>{event.location}</span>
                 </div>
-                <div className="flex items-center text-[#4A4A4A]/90">
+                <div className="flex items-center text-secondary/90">
                   <FaTicketAlt className="mr-2 text-[#2a6168]" />
                   <span>{event.price}</span>
                 </div>
               </div>
               
               {/* Description */}
-              <p className="text-[#4A4A4A]/90 mb-5 flex-1 font-['Satoshi']">
+              <p className="text-secondary/90 mb-5 flex-1 font-['Satoshi']">
                 {event.description}
               </p>
               
               {/* Action Buttons */}
               <div className="flex space-x-3 mt-auto">
-                <button className="flex-1 bg-[#2a6168] text-white font-medium py-2 px-4 rounded-lg hover:bg-[#23424A] transition duration-300 font-['Satoshi']">
+                <button className="flex-1 bg-primary-button text-white font-medium py-2 px-4 rounded-lg hover:bg-[#23424A] transition duration-300 font-['Satoshi']">
                   Register Now
                 </button>
-                <button className="flex-1 border border-[#2a6168] text-[#2a6168] hover:bg-[#2a6168]/10 font-medium py-2 px-4 rounded-lg transition duration-300 font-['Satoshi']">
+                <button className="flex-1 border border-[#2a6168] text-[#2a6168] hover:bg-primary-button/10 font-medium py-2 px-4 rounded-lg transition duration-300 font-['Satoshi']">
                   Learn More
                 </button>
               </div>
@@ -132,7 +132,7 @@ const UpcomingEventsSection = () => (
       
       {/* View All Button */}
       <div className="text-center mt-12">
-        <button className="bg-white/30 backdrop-blur-md border-2 border-[#2a6168] text-[#2a6168] hover:bg-[#2a6168] hover:text-white font-medium py-2 px-6 rounded-full transition duration-300 font-['Satoshi']">
+        <button className="bg-white/30 backdrop-blur-md border-2 border-[#2a6168] text-[#2a6168] hover:bg-primary-button hover:text-white font-medium py-2 px-6 rounded-full transition duration-300 font-['Satoshi']">
           View All Events
         </button>
       </div>

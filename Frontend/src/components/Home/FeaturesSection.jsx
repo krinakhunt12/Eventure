@@ -95,7 +95,7 @@ const features = [
 ];
 
 const FeaturesSection = () => (
-  <section id="features" className="w-full py-20 bg-gradient-to-br from-[#e3f2fd] to-[#bbdefb] relative overflow-hidden">
+  <section id="features" className="w-full py-20 bg-primary relative overflow-hidden">
     {/* Geometric background elements */}
     <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
       <div className="absolute top-10% left-10% w-64 h-64 bg-white/20 rounded-full blur-xl"></div>
@@ -105,12 +105,12 @@ const FeaturesSection = () => (
     <div className="max-w-7xl mx-auto px-6 relative z-10">
       {/* Section Header with custom font */}
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#23424A] mb-4 font-['ClashDisplay'] tracking-tight">
+        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-['ClashDisplay'] tracking-tight">
           EVERYTHING YOU NEED TO
-          <span className="text-[#4A4A4A]"> SUCCEED</span>
+          <span className="text-secondary"> Succeed</span>
         </h2>
-        <div className="w-24 h-1 bg-[#2a6168] mx-auto mb-6"></div>
-        <p className="text-lg text-[#4A4A4A] max-w-3xl mx-auto font-['Satoshi']">
+        <div className="w-24 h-1 bg-primary-button mx-auto mb-6"></div>
+        <p className="text-lg text-secondary max-w-3xl mx-auto font-['Satoshi']">
           Powerful features designed to enhance campus life and boost student engagement
         </p>
       </div>
@@ -123,32 +123,32 @@ const FeaturesSection = () => (
             className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-8 hover:shadow-lg transition-all duration-500 hover:-translate-y-2 group"
           >
             {/* Icon with geometric background */}
-            <div className="w-14 h-14 rounded-xl bg-white/50 flex items-center justify-center mb-6 group-hover:bg-[#2a6168]/20 transition-colors">
+            <div className="w-14 h-14 rounded-xl bg-white/50 flex items-center justify-center mb-6 group-hover:bg-primary-button/20 transition-colors">
               {React.cloneElement(feature.icon, { 
-                className: "w-6 h-6 text-[#23424A] group-hover:text-[#2a6168] transition-colors" 
+                className: "w-6 h-6 text-primary group-hover:text-[#2a6168] transition-colors" 
               })}
             </div>
             
             {/* Feature Title */}
-            <h3 className="text-xl font-bold text-[#23424A] mb-4 font-['ClashDisplay'] group-hover:text-[#2a6168] transition-colors">
+            <h3 className="text-xl font-bold text-primary mb-4 font-['ClashDisplay'] group-hover:text-[#2a6168] transition-colors">
               {feature.title}
             </h3>
             
             {/* Description */}
-            <p className="text-[#4A4A4A]/90 mb-6 font-['Satoshi'] leading-relaxed">
+            <p className="text-secondary/90 mb-6 font-['Satoshi'] leading-relaxed">
               {feature.desc}
             </p>
             
             {/* Benefits List */}
             <div className="mt-auto pt-4 border-t border-white/20">
-              <h4 className="text-sm font-semibold text-[#23424A] mb-3 font-['Satoshi']">KEY BENEFITS:</h4>
+              <h4 className="text-sm font-semibold text-primary mb-3 font-['Satoshi']">KEY BENEFITS:</h4>
               <ul className="space-y-3">
                 {feature.benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start">
                     <svg className="w-4 h-4 mt-1 mr-2 text-[#2a6168] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span className="text-sm text-[#4A4A4A]/90 font-['Satoshi']">{benefit}</span>
+                    <span className="text-sm text-secondary/90 font-['Satoshi']">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -159,7 +159,7 @@ const FeaturesSection = () => (
       
       {/* CTA Button */}
       <div className="mt-16 text-center">
-        <button className="px-8 py-3 bg-[#2a6168] text-white rounded-xl hover:bg-[#23424A] transition-colors font-medium font-['Satoshi'] shadow-sm hover:shadow-md hover:scale-105 transition-transform">
+        <button className="px-8 py-3 bg-primary-button text-white rounded-xl hover:bg-[#23424A] transition-colors font-medium font-['Satoshi'] shadow-sm hover:shadow-md hover:scale-105 transition-transform">
           Explore All Features
         </button>
       </div>

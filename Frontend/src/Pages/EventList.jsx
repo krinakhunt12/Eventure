@@ -202,7 +202,7 @@ const EventList = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-primary py-10 px-4 text-[#4A4A4A] font-sans font-poppins" style={{ fontFamily: 'Poppins, Inter, sans-serif' }}>
+      <div className="min-h-screen bg-primary py-10 px-4 text-secondary font-sans font-poppins" style={{ fontFamily: 'Poppins, Inter, sans-serif' }}>
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-8 font-poppins" style={{ color: '#23424A', fontFamily: 'Poppins, Inter, sans-serif' }}>
             College Events

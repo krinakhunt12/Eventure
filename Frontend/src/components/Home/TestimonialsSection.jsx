@@ -70,11 +70,11 @@ const TestimonialsSection = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header with custom font */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#23424A] mb-4 font-['ClashDisplay'] tracking-tight">
-            LOVED BY <span className="text-[#4A4A4A]">CAMPUS LEADERS</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-['ClashDisplay'] tracking-tight">
+            LOVED BY <span className="text-secondary">CAMPUS LEADERS</span>
           </h2>
-          <div className="w-24 h-1 bg-[#2a6168] mx-auto mb-6"></div>
-          <p className="text-lg text-[#4A4A4A] max-w-3xl mx-auto font-['Satoshi']">
+          <div className="w-24 h-1 bg-primary-button mx-auto mb-6"></div>
+          <p className="text-lg text-secondary max-w-3xl mx-auto font-['Satoshi']">
             Don't just take our word for it - hear from those who've transformed their campus communities
           </p>
         </div>
@@ -99,7 +99,7 @@ const TestimonialsSection = () => {
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
-                      className={`w-5 h-5 ${i < testimonials[currentTestimonial].rating ? 'text-yellow-400' : 'text-[#4A4A4A]/30'}`}
+                      className={`w-5 h-5 ${i < testimonials[currentTestimonial].rating ? 'text-yellow-400' : 'text-secondary/30'}`}
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -108,15 +108,15 @@ const TestimonialsSection = () => {
                   ))}
                 </div>
                 
-                <p className="text-lg md:text-xl text-[#4A4A4A]/90 mb-6 leading-relaxed font-['Satoshi']">
+                <p className="text-lg md:text-xl text-secondary/90 mb-6 leading-relaxed font-['Satoshi']">
                   "{testimonials[currentTestimonial].text}"
                 </p>
                 
                 <div>
-                  <div className="text-[#23424A] font-semibold text-xl font-['ClashDisplay']">
+                  <div className="text-primary font-semibold text-xl font-['ClashDisplay']">
                     {testimonials[currentTestimonial].name}
                   </div>
-                  <div className="text-[#4A4A4A]/80 text-sm font-['Satoshi']">
+                  <div className="text-secondary/80 text-sm font-['Satoshi']">
                     {testimonials[currentTestimonial].role}
                   </div>
                 </div>
@@ -126,14 +126,14 @@ const TestimonialsSection = () => {
           
           <button 
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-md border border-white/40 hover:bg-[#2a6168] hover:text-white transition-colors"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-md border border-white/40 hover:bg-primary-button hover:text-white transition-colors"
           >
             <FaChevronLeft />
           </button>
           
           <button 
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-md border border-white/40 hover:bg-[#2a6168] hover:text-white transition-colors"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-md border border-white/40 hover:bg-primary-button hover:text-white transition-colors"
           >
             <FaChevronRight />
           </button>
@@ -143,7 +143,7 @@ const TestimonialsSection = () => {
               <button
                 key={index}
                 onClick={() => setCurrentTestimonial(index)}
-                className={`w-3 h-3 rounded-full ${index === currentTestimonial ? 'bg-[#2a6168]' : 'bg-[#4A4A4A]/30'}`}
+                className={`w-3 h-3 rounded-full ${index === currentTestimonial ? 'bg-primary-button' : 'bg-[#4A4A4A]/30'}`}
               />
             ))}
           </div>
@@ -160,8 +160,8 @@ const TestimonialsSection = () => {
               key={index} 
               className="bg-white/30 backdrop-blur-md p-6 rounded-xl border border-white/40 hover:shadow-lg transition-all duration-300"
             >
-              <div className="text-3xl font-bold text-[#23424A] font-['ClashDisplay']">{stat.value}</div>
-              <div className="text-[#4A4A4A]/80 font-['Satoshi']">{stat.label}</div>
+              <div className="text-3xl font-bold text-primary font-['ClashDisplay']">{stat.value}</div>
+              <div className="text-secondary/80 font-['Satoshi']">{stat.label}</div>
             </div>
           ))}
         </div>

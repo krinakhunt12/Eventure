@@ -112,7 +112,7 @@ const PlatformStatsSection = () => (
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Testimonial with polygon shape */}
         <div className="lg:w-3/5 bg-white/40 backdrop-blur-md rounded-2xl border border-white/40 p-8 relative overflow-hidden">
-          <div className="absolute -right-20 -top-20 w-64 h-64 bg-[#2a6168]/10 rounded-full blur-2xl"></div>
+          <div className="absolute -right-20 -top-20 w-64 h-64 bg-primary-button/10 rounded-full blur-2xl"></div>
           <div className="relative z-10">
             <h3 className="text-2xl font-bold text-primary mb-6 font-['ClashDisplay']">
               <span className="text-secondary">Voices</span> from our community
@@ -139,7 +139,7 @@ const PlatformStatsSection = () => (
           </h3>
           <div className="space-y-6 relative">
             {/* Timeline line */}
-            <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-[#2a6168]/20"></div>
+            <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-button/20"></div>
             
             {[
               { date: "JUN 15-17", event: "Annual Tech Symposium" },

@@ -87,11 +87,11 @@ const EventCategoriesSection = () => (
     <div className="max-w-7xl mx-auto px-6 relative z-10">
       {/* Section Header with custom font */}
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#23424A] mb-4 font-['ClashDisplay'] tracking-tight">
-          EXPLORE EVENT <span className="text-[#4A4A4A]">CATEGORIES</span>
+        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-['ClashDisplay'] tracking-tight">
+          EXPLORE EVENT <span className="text-secondary">CATEGORIES</span>
         </h2>
-        <div className="w-24 h-1 bg-[#2a6168] mx-auto mb-6"></div>
-        <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto font-['Satoshi']">
+        <div className="w-24 h-1 bg-primary-button mx-auto mb-6"></div>
+        <p className="text-lg text-secondary max-w-2xl mx-auto font-['Satoshi']">
           Discover diverse events across campuses to learn, compete, and connect with your community
         </p>
       </div>
@@ -111,12 +111,12 @@ const EventCategoriesSection = () => (
             </div>
             
             {/* Category Name */}
-            <h3 className="text-2xl font-bold text-[#23424A] mb-3 font-['ClashDisplay'] group-hover:text-[#2a6168] transition-colors">
+            <h3 className="text-2xl font-bold text-primary mb-3 font-['ClashDisplay'] group-hover:text-[#2a6168] transition-colors">
               {cat.name}
             </h3>
             
             {/* Description */}
-            <p className="text-[#4A4A4A]/90 mb-5 font-['Satoshi'] leading-relaxed">
+            <p className="text-secondary/90 mb-5 font-['Satoshi'] leading-relaxed">
               {cat.description}
             </p>
             
@@ -137,7 +137,7 @@ const EventCategoriesSection = () => (
             </div>
             
             {/* View Button */}
-            <button className="mt-6 text-sm font-medium text-[#2a6168] hover:text-[#23424A] flex items-center transition font-['Satoshi'] group">
+            <button className="mt-6 text-sm font-medium text-[#2a6168] hover:text-primary flex items-center transition font-['Satoshi'] group">
               View events
               <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -149,17 +149,17 @@ const EventCategoriesSection = () => (
 
       {/* Additional Content - Glass Panel */}
       <div className="mt-16 bg-white/40 backdrop-blur-md rounded-2xl border border-white/40 p-8 relative overflow-hidden">
-        <div className="absolute -right-20 -top-20 w-64 h-64 bg-[#2a6168]/10 rounded-full blur-2xl"></div>
+        <div className="absolute -right-20 -top-20 w-64 h-64 bg-primary-button/10 rounded-full blur-2xl"></div>
         <div className="relative z-10 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">
-            <h3 className="text-2xl font-bold text-[#23424A] mb-4 font-['ClashDisplay']">
+            <h3 className="text-2xl font-bold text-primary mb-4 font-['ClashDisplay']">
               <span className="text-[#2a6168]">CAN'T FIND</span> YOUR EVENT?
             </h3>
-            <p className="text-[#4A4A4A] mb-6 font-['Satoshi']">
+            <p className="text-secondary mb-6 font-['Satoshi']">
               We're constantly expanding our categories. Suggest a new category and help shape
               the platform's future offerings.
             </p>
-            <button className="px-6 py-3 bg-[#2a6168] text-white rounded-xl hover:bg-[#23424A] transition flex items-center font-['Satoshi'] font-medium">
+            <button className="px-6 py-3 bg-primary-button text-white rounded-xl hover:bg-[#23424A] transition flex items-center font-['Satoshi'] font-medium">
               Suggest a Category
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -168,12 +168,12 @@ const EventCategoriesSection = () => (
           </div>
           <div className="md:w-1/2">
             <div className="bg-white/70 p-6 rounded-xl border border-white/90">
-              <h4 className="font-semibold text-[#23424A] mb-4 font-['ClashDisplay']">Coming Soon:</h4>
+              <h4 className="font-semibold text-primary mb-4 font-['ClashDisplay']">Coming Soon:</h4>
               <ul className="grid grid-cols-2 gap-3 font-['Satoshi']">
                 {["Entrepreneurship", "Arts & Crafts", "E-sports", "Food & Cooking"].map((item, index) => (
                   <li key={index} className="flex items-center">
-                    <div className="w-2 h-2 rounded-full bg-[#2a6168] mr-3"></div>
-                    <span className="text-[#4A4A4A] text-sm">{item}</span>
+                    <div className="w-2 h-2 rounded-full bg-primary-button mr-3"></div>
+                    <span className="text-secondary text-sm">{item}</span>
                   </li>
                 ))}
               </ul>

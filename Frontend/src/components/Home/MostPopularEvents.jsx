@@ -94,11 +94,11 @@ const MostPopularEvents = () => (
     <div className="max-w-7xl mx-auto px-6 relative z-10">
       {/* Section Header with custom font */}
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#23424A] mb-4 font-['ClashDisplay'] tracking-tight">
-          FEATURED <span className="text-[#4A4A4A]">CAMPUS EVENTS</span>
+        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-['ClashDisplay'] tracking-tight">
+          FEATURED <span className="text-secondary">CAMPUS EVENTS</span>
         </h2>
-        <div className="w-24 h-1 bg-[#2a6168] mx-auto mb-6"></div>
-        <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto font-['Satoshi']">
+        <div className="w-24 h-1 bg-primary-button mx-auto mb-6"></div>
+        <p className="text-lg text-secondary max-w-2xl mx-auto font-['Satoshi']">
           Discover the most anticipated events happening across campuses this year
         </p>
       </div>
@@ -125,13 +125,13 @@ const MostPopularEvents = () => (
             
             {/* Event Content */}
             <div className="p-6">
-              <h3 className="text-xl font-bold text-[#23424A] mb-3 font-['ClashDisplay'] group-hover:text-[#2a6168] transition-colors">
+              <h3 className="text-xl font-bold text-primary mb-3 font-['ClashDisplay'] group-hover:text-[#2a6168] transition-colors">
                 {event.title}
               </h3>
-              <p className="text-[#4A4A4A]/90 mb-4 font-['Satoshi']">{event.description}</p>
+              <p className="text-secondary/90 mb-4 font-['Satoshi']">{event.description}</p>
               
               {/* Event Meta */}
-              <div className="space-y-3 text-sm text-[#4A4A4A]/90 mb-5 font-['Satoshi']">
+              <div className="space-y-3 text-sm text-secondary/90 mb-5 font-['Satoshi']">
                 <div className="flex items-center">
                   <svg className="w-4 h-4 mr-2 text-[#2a6168]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -155,10 +155,10 @@ const MostPopularEvents = () => (
               
               {/* Action Buttons */}
               <div className="flex space-x-2">
-                <button className="flex-1 px-3 py-2 bg-[#2a6168] text-white text-sm rounded-lg hover:bg-[#23424A] transition flex items-center justify-center font-['Satoshi']">
+                <button className="flex-1 px-3 py-2 bg-primary-button text-white text-sm rounded-lg hover:bg-[#23424A] transition flex items-center justify-center font-['Satoshi']">
                   Register Now
                 </button>
-                <button className="px-3 py-2 border border-[#2a6168] text-[#2a6168] text-sm rounded-lg hover:bg-[#2a6168]/10 transition flex items-center justify-center">
+                <button className="px-3 py-2 border border-[#2a6168] text-[#2a6168] text-sm rounded-lg hover:bg-primary-button/10 transition flex items-center justify-center">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
@@ -171,7 +171,7 @@ const MostPopularEvents = () => (
 
       {/* View All Button */}
       <div className="text-center mt-12">
-        <button className="px-6 py-3 bg-white/30 backdrop-blur-md border-2 border-[#2a6168] text-[#2a6168] rounded-xl hover:bg-[#2a6168] hover:text-white transition flex items-center mx-auto font-['Satoshi'] font-medium">
+        <button className="px-6 py-3 bg-white/30 backdrop-blur-md border-2 border-[#2a6168] text-[#2a6168] rounded-xl hover:bg-primary-button hover:text-white transition flex items-center mx-auto font-['Satoshi'] font-medium">
           View All Upcoming Events
           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -181,11 +181,11 @@ const MostPopularEvents = () => (
 
       {/* Testimonial Section - Glass Panel */}
       <div className="mt-16 bg-white/40 backdrop-blur-md rounded-2xl border border-white/40 p-8 relative overflow-hidden">
-        <div className="absolute -right-20 -top-20 w-64 h-64 bg-[#2a6168]/10 rounded-full blur-2xl"></div>
+        <div className="absolute -right-20 -top-20 w-64 h-64 bg-primary-button/10 rounded-full blur-2xl"></div>
         <div className="relative z-10 flex flex-col md:flex-row">
           <div className="md:w-1/3 mb-8 md:mb-0 md:pr-8">
             <div className="bg-white/70 p-6 rounded-xl border border-white/90 h-full">
-              <h3 className="text-xl font-bold text-[#23424A] mb-4 font-['ClashDisplay']">
+              <h3 className="text-xl font-bold text-primary mb-4 font-['ClashDisplay']">
                 <span className="text-[#2a6168]">WHY ATTEND</span> THESE EVENTS?
               </h3>
               <ul className="space-y-3 font-['Satoshi']">
@@ -197,15 +197,15 @@ const MostPopularEvents = () => (
                   "Have fun and make memories"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
-                    <div className="w-2 h-2 rounded-full bg-[#2a6168] mt-2 mr-3"></div>
-                    <span className="text-[#4A4A4A]">{item}</span>
+                    <div className="w-2 h-2 rounded-full bg-primary-button mt-2 mr-3"></div>
+                    <span className="text-secondary">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
           <div className="md:w-2/3">
-            <h3 className="text-xl font-bold text-[#23424A] mb-4 font-['ClashDisplay']">
+            <h3 className="text-xl font-bold text-primary mb-4 font-['ClashDisplay']">
               WHAT OUR <span className="text-[#2a6168]">ATTENDEES SAY</span>
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -225,10 +225,10 @@ const MostPopularEvents = () => (
                   <svg className="w-6 h-6 text-[#2a6168] mb-3" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
-                  <p className="text-[#4A4A4A]/90 mb-3 italic font-['Satoshi']">"{testimonial.quote}"</p>
+                  <p className="text-secondary/90 mb-3 italic font-['Satoshi']">"{testimonial.quote}"</p>
                   <div className="text-sm font-['Satoshi']">
-                    <div className="font-semibold text-[#23424A]">{testimonial.name}</div>
-                    <div className="text-[#4A4A4A]/70">{testimonial.role}</div>
+                    <div className="font-semibold text-primary">{testimonial.name}</div>
+                    <div className="text-secondary/70">{testimonial.role}</div>
                   </div>
                 </div>
               ))}

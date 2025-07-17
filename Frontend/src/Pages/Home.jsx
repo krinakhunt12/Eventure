@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div className="scrollbar-hide bg-primary">
        <Navbar />
-       <div className="min-h-screen bg-primary text-[#4A4A4A] font-sans font-poppins overflow-hidden scrollbar-hide" style={{ fontFamily: 'Poppins, Inter, sans-serif' }}>
+       <div className="min-h-screen bg-primary text-secondary font-sans font-poppins overflow-hidden scrollbar-hide" style={{ fontFamily: 'Poppins, Inter, sans-serif' }}>
       {/* <FloatingBackground />    */}
       <HeroSection />
       <PlatformStatsSection />

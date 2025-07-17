@@ -63,11 +63,11 @@ const OrganizersSpotlightSection = () => (
     <div className="max-w-7xl mx-auto px-6 relative z-10">
       {/* Section Header with custom font */}
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#23424A] mb-4 font-['ClashDisplay'] tracking-tight">
-          ORGANIZERS <span className="text-[#4A4A4A]">SPOTLIGHT</span>
+        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-['ClashDisplay'] tracking-tight">
+          ORGANIZERS <span className="text-secondary">SPOTLIGHT</span>
         </h2>
-        <div className="w-24 h-1 bg-[#2a6168] mx-auto mb-6"></div>
-        <p className="text-lg text-[#4A4A4A] max-w-3xl mx-auto font-['Satoshi']">
+        <div className="w-24 h-1 bg-primary-button mx-auto mb-6"></div>
+        <p className="text-lg text-secondary max-w-3xl mx-auto font-['Satoshi']">
           Meet the passionate team behind our amazing events and initiatives
         </p>
       </div>
@@ -86,19 +86,19 @@ const OrganizersSpotlightSection = () => (
                 alt={org.name}
                 className="w-28 h-28 rounded-full object-cover border-4 border-white/50 group-hover:border-[#2a6168]/50 transition-colors"
               />
-              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-[#2a6168] text-white text-xs font-medium px-4 py-1 rounded-full font-['Satoshi'] shadow-sm">
+              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-primary-button text-white text-xs font-medium px-4 py-1 rounded-full font-['Satoshi'] shadow-sm">
                 {org.role.split(' ')[0]}
               </div>
             </div>
             
             {/* Organizer Info */}
-            <h3 className="text-xl font-bold text-[#23424A] mb-2 font-['ClashDisplay'] group-hover:text-[#2a6168] transition-colors">
+            <h3 className="text-xl font-bold text-primary mb-2 font-['ClashDisplay'] group-hover:text-[#2a6168] transition-colors">
               {org.name}
             </h3>
-            <div className="text-[#4A4A4A]/80 text-sm mb-4 font-medium font-['Satoshi']">
+            <div className="text-secondary/80 text-sm mb-4 font-medium font-['Satoshi']">
               {org.role}
             </div>
-            <p className="text-[#4A4A4A]/90 text-center text-sm mb-6 px-2 font-['Satoshi']">
+            <p className="text-secondary/90 text-center text-sm mb-6 px-2 font-['Satoshi']">
               {org.bio}
             </p>
             
@@ -106,21 +106,21 @@ const OrganizersSpotlightSection = () => (
             <div className="flex space-x-4 mt-auto">
               <a 
                 href={org.social.linkedin} 
-                className="text-[#4A4A4A]/80 hover:text-[#2a6168] transition-colors"
+                className="text-secondary/80 hover:text-[#2a6168] transition-colors"
                 aria-label={`Connect with ${org.name} on LinkedIn`}
               >
                 <FaLinkedin size={18} />
               </a>
               <a 
                 href={org.social.twitter} 
-                className="text-[#4A4A4A]/80 hover:text-[#2a6168] transition-colors"
+                className="text-secondary/80 hover:text-[#2a6168] transition-colors"
                 aria-label={`Follow ${org.name} on Twitter`}
               >
                 <FaTwitter size={18} />
               </a>
               <a 
                 href={`mailto:${org.social.email}`} 
-                className="text-[#4A4A4A]/80 hover:text-[#2a6168] transition-colors"
+                className="text-secondary/80 hover:text-[#2a6168] transition-colors"
                 aria-label={`Email ${org.name}`}
               >
                 <FaEnvelope size={18} />

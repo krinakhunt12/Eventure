@@ -44,7 +44,7 @@ const EVENTS = {
 const STATUS_COLORS = {
   Upcoming: "bg-[#B6E2D3] text-secondary",
   Ongoing: "bg-[#7FC8A9] text-white",
-  Completed: "bg-[#E0E7EA] text-[#4A4A4A]",
+  Completed: "bg-[#E0E7EA] text-secondary",
 };
 
 const MyEvents = () => {
