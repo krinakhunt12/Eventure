@@ -202,26 +202,26 @@ const EventList = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-primary py-10 px-4 font-['Satoshi'] relative overflow-hidden">
+      <div className="min-h-screen bg-primary py-6 sm:py-10 px-2 sm:px-4 font-['Satoshi'] relative overflow-hidden">
         {/* Geometric background elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute top-[10%] left-[10%] w-40 h-40 sm:w-64 sm:h-64 bg-white/20 rounded-full blur-xl"></div>
           <div className="absolute bottom-[20%] right-[15%] w-52 h-52 sm:w-80 sm:h-80 bg-white/15 rounded-full blur-xl"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-2xl sm:max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto relative z-10">
           {/* Updated heading with ClashDisplay font */}
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 text-primary font-['ClashDisplay'] tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6 sm:mb-8 text-primary font-['ClashDisplay'] tracking-tight">
             COLLEGE <span className="text-secondary">EVENTS</span>
           </h1>
           
           {/* Filter buttons */}
-          <div className="flex justify-center mb-8 gap-4">
+          <div className="flex justify-center mb-6 sm:mb-8 gap-2 sm:gap-4">
             {FILTERS.map((f) => (
               <button
                 key={f.value}
                 onClick={() => setFilter(f.value)}
-                className={`px-5 py-2 rounded-full font-medium transition-all duration-200 border-2 focus:outline-none focus:ring-2 focus:ring-primary-button font-['Satoshi'] ${
+                className={`px-3 sm:px-5 py-1.5 sm:py-2 rounded-full font-medium transition-all duration-200 border-2 focus:outline-none focus:ring-2 focus:ring-primary-button font-['Satoshi'] text-xs sm:text-base ${
                   filter === f.value
                     ? "bg-primary-button text-white border-primary-button"
                     : "bg-white/30 backdrop-blur-md text-primary border-primary hover:bg-primary-button/20"
@@ -233,9 +233,9 @@ const EventList = () => {
           </div>
 
           {/* Events grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {filteredEvents.length === 0 ? (
-              <div className="col-span-full text-center text-gray-500 text-lg font-['Satoshi']">
+              <div className="col-span-full text-center text-gray-500 text-base sm:text-lg font-['Satoshi']">
                 No events found.
               </div>
             ) : (
@@ -247,42 +247,42 @@ const EventList = () => {
                   <img
                     src={event.poster}
                     alt={event.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-32 sm:h-40 md:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="p-6 flex flex-col">
-                    <div className="flex justify-between items-center mb-3">
-                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                  <div className="p-4 sm:p-6 flex flex-col">
+                    <div className="flex justify-between items-center mb-2 sm:mb-3">
+                      <span className={`px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-semibold ${
                         CATEGORY_COLORS[event.category]
                       }`}>
                         {event.category}
                       </span>
-                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      <span className={`px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-semibold ${
                         STATUS_COLORS[event.status]
                       }`}>
                         {event.status}
                       </span>
                     </div>
                     
-                    <h2 className="text-xl font-bold text-primary mb-2 font-['ClashDisplay'] group-hover:text-primary transition-colors">
+                    <h2 className="text-base sm:text-xl font-bold text-primary mb-1 sm:mb-2 font-['ClashDisplay'] group-hover:text-primary transition-colors">
                       {event.title}
                     </h2>
                     
-                    <div className="text-sm text-secondary mb-3">
+                    <div className="text-xs sm:text-sm text-secondary mb-1 sm:mb-3">
                       {new Date(event.datetime).toLocaleString(undefined, {
                         dateStyle: "medium",
                         timeStyle: "short",
                       })}
                     </div>
                     
-                    <p className="text-secondary/90 mb-4 leading-relaxed">
+                    <p className="text-secondary/90 mb-2 sm:mb-4 leading-relaxed text-xs sm:text-base">
                       {event.description}
                     </p>
                     
-                    <div className="mt-auto pt-3 border-t border-white/20">
-                      <div className="text-sm text-secondary">
+                    <div className="mt-auto pt-2 sm:pt-3 border-t border-white/20">
+                      <div className="text-xs sm:text-sm text-secondary">
                         <span className="font-semibold">Venue:</span> {event.venue}
                       </div>
-                      <div className="text-sm text-secondary">
+                      <div className="text-xs sm:text-sm text-secondary">
                         <span className="font-semibold">Organized By:</span> {event.organizedBy}
                       </div>
                     </div>

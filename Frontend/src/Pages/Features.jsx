@@ -71,36 +71,36 @@ const Features = () => (
         <div className="absolute bottom-[20%] right-[15%] w-52 h-52 sm:w-80 sm:h-80 bg-white/15 rounded-full blur-xl"></div>
       </div>
 
-      <div className="relative z-10 py-16 px-4 flex flex-col items-center">
+      <div className="relative z-10 py-8 sm:py-12 md:py-16 px-2 sm:px-4 flex flex-col items-center">
         {/* Section Header */}
-        <div className="text-center mb-12 max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary font-['ClashDisplay'] tracking-tight">
+        <div className="text-center mb-8 sm:mb-12 max-w-xl sm:max-w-3xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-primary font-['ClashDisplay'] tracking-tight">
             PLATFORM <span className="text-secondary">FEATURES</span>
           </h1>
-          <div className="w-16 sm:w-24 h-1 bg-primary-button mx-auto mb-4 sm:mb-6"></div>
-          <p className="text-lg md:text-xl text-secondary font-['Satoshi']">
+          <div className="w-12 sm:w-16 md:w-24 h-1 bg-primary-button mx-auto mb-3 sm:mb-4 md:mb-6"></div>
+          <p className="text-base sm:text-lg md:text-xl text-secondary font-['Satoshi']">
             Discover all the ways Eventure makes campus event management and participation seamless, fun, and impactful for everyone.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full max-w-2xl sm:max-w-3xl md:max-w-5xl lg:max-w-7xl">
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-6 hover:shadow-lg transition-all duration-500 hover:-translate-y-2 group flex flex-col items-center"
+              className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-4 sm:p-6 hover:shadow-lg transition-all duration-500 hover:-translate-y-2 group flex flex-col items-center"
             >
               {/* Icon with animated background */}
-              <div className="w-16 h-16 rounded-xl bg-white/50 flex items-center justify-center mb-6 group-hover:bg-primary-button/20 transition-colors">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-white/50 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-primary-button/20 transition-colors">
                 {React.cloneElement(feature.icon, {
-                  className: "w-8 h-8 group-hover:scale-110 transition-transform"
+                  className: "w-7 h-7 sm:w-8 sm:h-8 group-hover:scale-110 transition-transform"
                 })}
               </div>
               
-              <h2 className="text-xl font-bold text-primary text-center mb-3 font-['ClashDisplay'] group-hover:text-primary transition-colors">
+              <h2 className="text-base sm:text-lg md:text-xl font-bold text-primary text-center mb-2 sm:mb-3 font-['ClashDisplay'] group-hover:text-primary transition-colors">
                 {feature.title}
               </h2>
-              <p className="text-secondary/90 text-center font-['Satoshi'] leading-relaxed">
+              <p className="text-secondary/90 text-center font-['Satoshi'] leading-relaxed text-xs sm:text-base">
                 {feature.description}
               </p>
             </div>
@@ -108,14 +108,14 @@ const Features = () => (
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center max-w-2xl">
-          <h3 className="text-2xl font-semibold mb-4 text-secondary font-['ClashDisplay']">
+        <div className="mt-10 sm:mt-16 text-center max-w-xs sm:max-w-xl md:max-w-2xl">
+          <h3 className="text-lg sm:text-2xl font-semibold mb-2 sm:mb-4 text-secondary font-['ClashDisplay']">
             AND MUCH MORE COMING SOON!
           </h3>
-          <p className="text-secondary/80 mb-6 font-['Satoshi']">
+          <p className="text-secondary/80 mb-4 sm:mb-6 font-['Satoshi'] text-xs sm:text-base">
             We're constantly adding new features and improvements based on your feedback. Stay tuned for updates and let us know what you'd love to see next!
           </p>
-          <button className="px-8 py-3 bg-primary-button text-white rounded-xl hover:bg-[#23424A] transition-colors font-medium font-['Satoshi'] shadow-sm hover:shadow-md">
+          <button className="px-5 sm:px-8 py-2 sm:py-3 bg-primary-button text-white rounded-xl hover:bg-[#23424A] transition-colors font-medium font-['Satoshi'] shadow-sm hover:shadow-md text-xs sm:text-base">
             Request a Feature
           </button>
         </div>
