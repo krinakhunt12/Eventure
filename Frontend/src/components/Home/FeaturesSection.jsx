@@ -95,60 +95,60 @@ const features = [
 ];
 
 const FeaturesSection = () => (
-  <section id="features" className="w-full py-20 bg-primary relative overflow-hidden">
+  <section id="features" className="w-full py-10 sm:py-14 md:py-20 bg-primary relative overflow-hidden">
     {/* Geometric background elements */}
     <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-      <div className="absolute top-10% left-10% w-64 h-64 bg-white/20 rounded-full blur-xl"></div>
-      <div className="absolute bottom-20% right-15% w-80 h-80 bg-white/15 rounded-full blur-xl"></div>
+      <div className="absolute top-[10%] left-[10%] w-40 h-40 sm:w-64 sm:h-64 bg-white/20 rounded-full blur-xl"></div>
+      <div className="absolute bottom-[20%] right-[15%] w-52 h-52 sm:w-80 sm:h-80 bg-white/15 rounded-full blur-xl"></div>
     </div>
     
-    <div className="max-w-7xl mx-auto px-6 relative z-10">
-      {/* Section Header with custom font */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-['ClashDisplay'] tracking-tight">
+    <div className="max-w-2xl sm:max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+      {/* Section Header */}
+      <div className="text-center mb-10 sm:mb-14 md:mb-16">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 sm:mb-4 font-['ClashDisplay'] tracking-tight">
           EVERYTHING YOU NEED TO
           <span className="text-secondary"> Succeed</span>
         </h2>
-        <div className="w-24 h-1 bg-primary-button mx-auto mb-6"></div>
-        <p className="text-lg text-secondary max-w-3xl mx-auto font-['Satoshi']">
+        <div className="w-16 sm:w-24 h-1 bg-primary-button mx-auto mb-4 sm:mb-6"></div>
+        <p className="text-base sm:text-lg md:text-xl text-secondary max-w-md sm:max-w-xl md:max-w-3xl mx-auto font-['Satoshi']">
           Powerful features designed to enhance campus life and boost student engagement
         </p>
       </div>
       
-      {/* Features Grid - Glassmorphism Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Features Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-8 hover:shadow-lg transition-all duration-500 hover:-translate-y-2 group"
+            className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-5 sm:p-8 hover:shadow-lg transition-all duration-500 hover:-translate-y-2 group flex flex-col h-full"
           >
             {/* Icon with geometric background */}
-            <div className="w-14 h-14 rounded-xl bg-white/50 flex items-center justify-center mb-6 group-hover:bg-primary-button/20 transition-colors">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-white/50 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-primary-button/20 transition-colors">
               {React.cloneElement(feature.icon, { 
                 className: "w-6 h-6 text-primary group-hover:text-primary transition-colors" 
               })}
             </div>
             
             {/* Feature Title */}
-            <h3 className="text-xl font-bold text-primary mb-4 font-['ClashDisplay'] group-hover:text-primary transition-colors">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-primary mb-2 sm:mb-4 font-['ClashDisplay'] group-hover:text-primary transition-colors">
               {feature.title}
             </h3>
             
             {/* Description */}
-            <p className="text-secondary/90 mb-6 font-['Satoshi'] leading-relaxed">
+            <p className="text-secondary/90 mb-3 sm:mb-6 font-['Satoshi'] leading-relaxed text-sm sm:text-base md:text-lg">
               {feature.desc}
             </p>
             
             {/* Benefits List */}
-            <div className="mt-auto pt-4 border-t border-white/20">
-              <h4 className="text-sm font-semibold text-primary mb-3 font-['Satoshi']">KEY BENEFITS:</h4>
-              <ul className="space-y-3">
+            <div className="mt-auto pt-3 sm:pt-4 border-t border-white/20">
+              <h4 className="text-xs sm:text-sm font-semibold text-primary mb-2 sm:mb-3 font-['Satoshi']">KEY BENEFITS:</h4>
+              <ul className="space-y-2 sm:space-y-3">
                 {feature.benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start">
                     <svg className="w-4 h-4 mt-1 mr-2 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span className="text-sm text-secondary/90 font-['Satoshi']">{benefit}</span>
+                    <span className="text-xs sm:text-sm text-secondary/90 font-['Satoshi']">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -158,8 +158,8 @@ const FeaturesSection = () => (
       </div>
       
       {/* CTA Button */}
-      <div className="mt-16 text-center">
-        <button className="px-8 py-3 bg-primary-button text-white rounded-xl hover:bg-[#23424A] transition-colors font-medium font-['Satoshi'] shadow-sm hover:shadow-md hover:scale-105 transition-transform">
+      <div className="mt-10 sm:mt-16 text-center">
+        <button className="px-6 sm:px-8 py-2 sm:py-3 bg-primary-button text-white rounded-xl hover:bg-[#23424A] transition-colors font-medium font-['Satoshi'] shadow-sm hover:shadow-md hover:scale-105 transition-transform text-xs sm:text-sm md:text-base">
           Explore All Features
         </button>
       </div>
@@ -167,4 +167,4 @@ const FeaturesSection = () => (
   </section>
 );
 
-export default FeaturesSection;;
+export default FeaturesSection;

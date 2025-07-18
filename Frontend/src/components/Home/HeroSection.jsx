@@ -12,59 +12,59 @@ const stats = [
 ];
 
 const HeroSection = () => (
-  <div className="relative overflow-hidden bg-gradient-to-r from-[#bbdefb] to-[#e3f2fd] pb-12">
+  <div className="relative overflow-hidden bg-gradient-to-r from-[#bbdefb] to-[#e3f2fd] pb-8 sm:pb-10 md:pb-12">
     {/* Complex wave bottom edge */}
     <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 30L60 40C120 50 240 70 360 60C480 50 600 10 720 20C840 30 960 80 1080 80C1200 80 1320 30 1380 10L1440 0V120H0V30Z" fill="#e3f2fd" />
     </svg>
     
-    <div className="max-w-7xl mx-auto px-6 pt-20 flex flex-col md:flex-row items-center justify-between min-h-[500px]">
+    <div className="max-w-2xl sm:max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-14 sm:pt-16 md:pt-20 flex flex-col md:flex-row items-center justify-between min-h-[350px] sm:min-h-[400px] md:min-h-[500px]">
       {/* Left: Content - Polygon Background */}
-      <div className="md:w-1/2 text-left z-10 relative pl-10">
-        <div className="absolute -left-10 top-0 w-full h-full -skew-x-12 bg-white/30 -z-10"></div>
+      <div className="md:w-1/2 text-left z-10 relative pl-0 sm:pl-6 md:pl-10">
+        <div className="absolute -left-4 sm:-left-8 md:-left-10 top-0 w-full h-full -skew-x-12 bg-white/30 -z-10"></div>
         
-        <div className="inline-flex items-center px-4 py-2 bg-secondary rounded-full text-primary text-sm font-medium mb-8">
+        <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-secondary rounded-full text-primary text-xs sm:text-sm font-medium mb-5 sm:mb-8">
           <Sparkles className="w-4 h-4 mr-2" />
           Empowering Campus Communities
         </div>
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-tight text-primary font-['ClashDisplay']">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight text-primary font-['ClashDisplay']">
           Discover, Connect, <br className="hidden md:block" />
           <span className="text-secondary">Thrive Together</span>
         </h1>
-        <p className="text-lg text-gray-700 mb-8 max-w-xl font-['Satoshi'] leading-relaxed italic">
+        <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 max-w-md sm:max-w-xl font-['Satoshi'] leading-relaxed italic">
           Unlock your potential with campus events that inspire, educate, and connect.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 mb-10">
-          <Button className="bg-primary-button hover:bg-primary-button text-white px-8 py-4 text-lg rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-10">
+          <Button className="bg-primary-button hover:bg-primary-button text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
             Get Started
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
           <Button
             variant="outline"
-            className="border-2 border-primary px-8 py-4 text-lg rounded-full shadow-sm transition-all duration-300 hover:scale-105 group"
+            className="border-2 border-primary px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-sm transition-all duration-300 hover:scale-105 group"
           >
             <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
             Watch Demo
           </Button>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
           {stats.map((stat, index) => (
-            <div key={index} className="text-left bg-white/50 p-3 rounded-lg backdrop-blur-sm">
-              <div className="text-2xl md:text-3xl font-bold text-primary mb-1">{stat.number}</div>
-              <div className="text-gray-600 text-xs md:text-sm">{stat.label}</div>
+            <div key={index} className="text-left bg-white/50 p-2 sm:p-3 rounded-lg backdrop-blur-sm">
+              <div className="text-lg sm:text-2xl md:text-3xl font-bold text-primary mb-0.5 sm:mb-1">{stat.number}</div>
+              <div className="text-gray-600 text-xs sm:text-sm">{stat.label}</div>
             </div>
           ))}
         </div>
       </div>
       
       {/* Right: Image - Circular with Notch */}
-      <div className="md:w-1/2 flex justify-end items-center mt-10 md:mt-0 z-10">
+      <div className="md:w-1/2 flex justify-end items-center mt-8 sm:mt-10 md:mt-0 z-10">
         <div className="relative">
-          <div className="absolute -inset-4 bg-white rounded-full shadow-xl"></div>
+          <div className="absolute -inset-2 sm:-inset-4 bg-white rounded-full shadow-xl"></div>
           <img
             src={heroImgUrl}
             alt="Students collaborating on campus"
-            className="relative w-96 h-96 object-cover rounded-full border-8 border-white shadow-lg clip-notch"
+            className="relative w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 object-cover rounded-full border-4 sm:border-8 border-white shadow-lg clip-notch"
           />
         </div>
       </div>

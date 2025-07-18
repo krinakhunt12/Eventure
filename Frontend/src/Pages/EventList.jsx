@@ -202,66 +202,89 @@ const EventList = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-primary py-10 px-4 text-secondary font-sans font-poppins" style={{ fontFamily: 'Poppins, Inter, sans-serif' }}>
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-8 font-poppins" style={{ color: '#23424A', fontFamily: 'Poppins, Inter, sans-serif' }}>
-            College Events
+      <div className="min-h-screen bg-primary py-10 px-4 font-['Satoshi'] relative overflow-hidden">
+        {/* Geometric background elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+          <div className="absolute top-[10%] left-[10%] w-40 h-40 sm:w-64 sm:h-64 bg-white/20 rounded-full blur-xl"></div>
+          <div className="absolute bottom-[20%] right-[15%] w-52 h-52 sm:w-80 sm:h-80 bg-white/15 rounded-full blur-xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Updated heading with ClashDisplay font */}
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 text-primary font-['ClashDisplay'] tracking-tight">
+            COLLEGE <span className="text-secondary">EVENTS</span>
           </h1>
+          
+          {/* Filter buttons */}
           <div className="flex justify-center mb-8 gap-4">
             {FILTERS.map((f) => (
               <button
                 key={f.value}
                 onClick={() => setFilter(f.value)}
-                className={`px-5 py-2 rounded-full font-medium transition-all duration-200 border-2 focus:outline-none focus:ring-2 focus:ring-primary-button ${
+                className={`px-5 py-2 rounded-full font-medium transition-all duration-200 border-2 focus:outline-none focus:ring-2 focus:ring-primary-button font-['Satoshi'] ${
                   filter === f.value
-                    ? "bg-primary-button text-[var(--primary-button-text-color)] border-primary-button"
-                    : "bg-white text-primary-button border-primary hover:bg-primary-button/40"
+                    ? "bg-primary-button text-white border-primary-button"
+                    : "bg-white/30 backdrop-blur-md text-primary border-primary hover:bg-primary-button/20"
                 }`}
               >
                 {f.label}
               </button>
             ))}
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+          {/* Events grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {filteredEvents.length === 0 ? (
-              <div className="col-span-full text-center text-gray-500 text-lg">No events found.</div>
+              <div className="col-span-full text-center text-gray-500 text-lg font-['Satoshi']">
+                No events found.
+              </div>
             ) : (
               filteredEvents.map((event) => (
                 <div
                   key={event.id}
-                  className="bg-white rounded-2xl shadow-lg border border-[#E0E7EA] flex flex-col overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+                  className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
                 >
                   <img
                     src={event.poster}
                     alt={event.title}
-                    className="w-full h-40 object-cover object-center"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="p-5 flex-1 flex flex-col">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className={`px-3 py-1 rounded-full text-xs font-semibold bg-primary-button text-[var(--primary-button-text-color)]`}>
+                  <div className="p-6 flex flex-col">
+                    <div className="flex justify-between items-center mb-3">
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                        CATEGORY_COLORS[event.category]
+                      }`}>
                         {event.category}
                       </span>
                       <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                        event.status === 'Open'
-                          ? 'bg-primary-button text-[var(--primary-button-text-color)]'
-                          : 'bg-primary text-primary'
+                        STATUS_COLORS[event.status]
                       }`}>
                         {event.status}
                       </span>
                     </div>
-                    <h2 className="text-xl font-bold text-gray-800 mb-1">{event.title}</h2>
-                    <div className="text-sm text-gray-500 mb-2">
+                    
+                    <h2 className="text-xl font-bold text-primary mb-2 font-['ClashDisplay'] group-hover:text-primary transition-colors">
+                      {event.title}
+                    </h2>
+                    
+                    <div className="text-sm text-secondary mb-3">
                       {new Date(event.datetime).toLocaleString(undefined, {
                         dateStyle: "medium",
                         timeStyle: "short",
                       })}
                     </div>
-                    <div className="text-gray-700 mb-3 flex-1">{event.description}</div>
-                    <div className="text-sm text-gray-600 mb-1">
-                      <span className="font-semibold">Venue:</span> {event.venue}
-                    </div>
-                    <div className="text-sm text-gray-600 mb-1">
-                      <span className="font-semibold">Organized By:</span> {event.organizedBy}
+                    
+                    <p className="text-secondary/90 mb-4 leading-relaxed">
+                      {event.description}
+                    </p>
+                    
+                    <div className="mt-auto pt-3 border-t border-white/20">
+                      <div className="text-sm text-secondary">
+                        <span className="font-semibold">Venue:</span> {event.venue}
+                      </div>
+                      <div className="text-sm text-secondary">
+                        <span className="font-semibold">Organized By:</span> {event.organizedBy}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -275,4 +298,4 @@ const EventList = () => {
   );
 };
 
-export default EventList; 
+export default EventList;

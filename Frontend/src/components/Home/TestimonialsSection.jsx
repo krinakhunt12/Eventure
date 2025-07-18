@@ -39,8 +39,6 @@ const testimonials = [
   }
 ];
 
-
-
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -60,46 +58,46 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section className="w-full py-20 bg-gradient-to-br from-[#e3f2fd] to-[#bbdefb] relative overflow-hidden">
+    <section className="w-full py-10 sm:py-14 md:py-20 bg-gradient-to-br from-[#e3f2fd] to-[#bbdefb] relative overflow-hidden">
       {/* Geometric background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute top-10% left-10% w-64 h-64 bg-white/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20% right-15% w-80 h-80 bg-white/15 rounded-full blur-xl"></div>
+        <div className="absolute top-[10%] left-[10%] w-40 h-40 sm:w-64 sm:h-64 bg-white/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-[20%] right-[15%] w-52 h-52 sm:w-80 sm:h-80 bg-white/15 rounded-full blur-xl"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Section Header with custom font */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-['ClashDisplay'] tracking-tight">
+      <div className="max-w-2xl sm:max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-10 sm:mb-14 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 sm:mb-4 font-['ClashDisplay'] tracking-tight">
             LOVED BY <span className="text-secondary">CAMPUS LEADERS</span>
           </h2>
-          <div className="w-24 h-1 bg-primary-button mx-auto mb-6"></div>
-          <p className="text-lg text-secondary max-w-3xl mx-auto font-['Satoshi']">
+          <div className="w-16 sm:w-24 h-1 bg-primary-button mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-base sm:text-lg md:text-xl text-secondary max-w-md sm:max-w-2xl md:max-w-3xl mx-auto font-['Satoshi']">
             Don't just take our word for it - hear from those who've transformed their campus communities
           </p>
         </div>
         
         <div className="relative">
-          <div className="bg-white/30 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/40 shadow-lg relative overflow-hidden">
-            <div className="absolute top-8 left-8 text-primary/10">
-              <FaQuoteLeft size={60} />
+          <div className="bg-white/30 backdrop-blur-md rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 border border-white/40 shadow-lg relative overflow-hidden">
+            <div className="absolute top-4 sm:top-8 left-4 sm:left-8 text-primary/10">
+              <FaQuoteLeft size={40} className="sm:w-[60px] sm:h-[60px]" />
             </div>
             
-            <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex flex-col md:flex-row items-center gap-5 sm:gap-8">
               <div className="flex-shrink-0">
                 <img 
                   src={testimonials[currentTestimonial].avatar} 
                   alt={testimonials[currentTestimonial].name}
-                  className="w-24 h-24 rounded-full object-cover border-4 border-white/50 shadow-md hover:border-primary/50 transition-colors"
+                  className="w-16 h-16 sm:w-24 sm:h-24 rounded-full object-cover border-2 sm:border-4 border-white/50 shadow-md hover:border-primary/50 transition-colors"
                 />
               </div>
               
               <div className="text-center md:text-left">
-                <div className="flex justify-center md:justify-start mb-4">
+                <div className="flex justify-center md:justify-start mb-2 sm:mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
-                      className={`w-5 h-5 ${i < testimonials[currentTestimonial].rating ? 'text-yellow-400' : 'text-secondary/30'}`}
+                      className={`w-4 h-4 sm:w-5 sm:h-5 ${i < testimonials[currentTestimonial].rating ? 'text-yellow-400' : 'text-secondary/30'}`}
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -108,15 +106,15 @@ const TestimonialsSection = () => {
                   ))}
                 </div>
                 
-                <p className="text-lg md:text-xl text-secondary/90 mb-6 leading-relaxed font-['Satoshi']">
+                <p className="text-base sm:text-lg md:text-xl text-secondary/90 mb-4 sm:mb-6 leading-relaxed font-['Satoshi']">
                   "{testimonials[currentTestimonial].text}"
                 </p>
                 
                 <div>
-                  <div className="text-primary font-semibold text-xl font-['ClashDisplay']">
+                  <div className="text-primary font-semibold text-lg sm:text-xl font-['ClashDisplay']">
                     {testimonials[currentTestimonial].name}
                   </div>
-                  <div className="text-secondary/80 text-sm font-['Satoshi']">
+                  <div className="text-secondary/80 text-xs sm:text-sm font-['Satoshi']">
                     {testimonials[currentTestimonial].role}
                   </div>
                 </div>
@@ -126,30 +124,30 @@ const TestimonialsSection = () => {
           
           <button 
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-md border border-white/40 hover:bg-primary-button hover:text-white transition-colors"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-md border border-white/40 hover:bg-primary-button hover:text-white transition-colors"
           >
             <FaChevronLeft />
           </button>
           
           <button 
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-md border border-white/40 hover:bg-primary-button hover:text-white transition-colors"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-md border border-white/40 hover:bg-primary-button hover:text-white transition-colors"
           >
             <FaChevronRight />
           </button>
           
-          <div className="flex justify-center mt-6 space-x-2">
+          <div className="flex justify-center mt-4 sm:mt-6 space-x-1 sm:space-x-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentTestimonial(index)}
-                className={`w-3 h-3 rounded-full ${index === currentTestimonial ? 'bg-primary-button' : 'bg-[#4A4A4A]/30'}`}
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full ${index === currentTestimonial ? 'bg-primary-button' : 'bg-[#4A4A4A]/30'}`}
               />
             ))}
           </div>
         </div>
         
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="mt-10 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
           {[
             { value: "300%", label: "Increase in engagement" },
             { value: "95%", label: "Of universities recommend" },
@@ -158,10 +156,10 @@ const TestimonialsSection = () => {
           ].map((stat, index) => (
             <div 
               key={index} 
-              className="bg-white/30 backdrop-blur-md p-6 rounded-xl border border-white/40 hover:shadow-lg transition-all duration-300"
+              className="bg-white/30 backdrop-blur-md p-4 sm:p-6 rounded-xl border border-white/40 hover:shadow-lg transition-all duration-300"
             >
-              <div className="text-3xl font-bold text-primary font-['ClashDisplay']">{stat.value}</div>
-              <div className="text-secondary/80 font-['Satoshi']">{stat.label}</div>
+              <div className="text-xl sm:text-3xl font-bold text-primary font-['ClashDisplay']">{stat.value}</div>
+              <div className="text-secondary/80 font-['Satoshi'] text-xs sm:text-base">{stat.label}</div>
             </div>
           ))}
         </div>

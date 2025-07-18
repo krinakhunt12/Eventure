@@ -77,52 +77,52 @@ const categories = [
 ];
 
 const EventCategoriesSection = () => (
-  <section className="w-full py-20 bg-gradient-to-br from-[#e3f2fd] to-[#bbdefb] relative overflow-hidden">
+  <section className="w-full py-10 sm:py-14 md:py-20 bg-gradient-to-br from-[#e3f2fd] to-[#bbdefb] relative overflow-hidden">
     {/* Geometric background elements */}
     <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-      <div className="absolute top-10% left-10% w-64 h-64 bg-white/20 rounded-full blur-xl"></div>
-      <div className="absolute bottom-20% right-15% w-80 h-80 bg-white/15 rounded-full blur-xl"></div>
+      <div className="absolute top-[10%] left-[10%] w-40 h-40 sm:w-64 sm:h-64 bg-white/20 rounded-full blur-xl"></div>
+      <div className="absolute bottom-[20%] right-[15%] w-52 h-52 sm:w-80 sm:h-80 bg-white/15 rounded-full blur-xl"></div>
     </div>
     
-    <div className="max-w-7xl mx-auto px-6 relative z-10">
-      {/* Section Header with custom font */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-['ClashDisplay'] tracking-tight uppercase">
+    <div className="max-w-2xl sm:max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+      {/* Section Header */}
+      <div className="text-center mb-10 sm:mb-14 md:mb-16">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 sm:mb-4 font-['ClashDisplay'] tracking-tight uppercase">
           Explore Event <span className="text-secondary">Categories</span>
         </h2>
-        <div className="w-24 h-1 bg-primary-button mx-auto mb-6"></div>
-        <p className="text-lg text-secondary max-w-2xl mx-auto font-['Satoshi']">
+        <div className="w-16 sm:w-24 h-1 bg-primary-button mx-auto mb-4 sm:mb-6"></div>
+        <p className="text-base sm:text-lg md:text-xl text-secondary max-w-md sm:max-w-xl md:max-w-2xl mx-auto font-['Satoshi']">
           Discover diverse events across campuses to learn, compete, and connect with your community
         </p>
       </div>
 
-      {/* Categories Grid - Glassmorphism Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Categories Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
         {categories.map((cat) => (
           <div 
             key={cat.name}
-            className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-8 hover:shadow-lg transition-all duration-500 hover:-translate-y-2 group"
+            className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-5 sm:p-8 hover:shadow-lg transition-all duration-500 hover:-translate-y-2 group"
           >
             {/* Icon with geometric background */}
-            <div className={`p-4 mb-6 rounded-xl w-16 h-16 flex items-center justify-center ${cat.color} bg-opacity-80`}>
+            <div className={`p-3 sm:p-4 mb-4 sm:mb-6 rounded-xl w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center ${cat.color} bg-opacity-80`}>
               {React.cloneElement(cat.icon, { 
                 className: "w-8 h-8 text-primary group-hover:scale-110 transition-transform" 
               })}
             </div>
             
             {/* Category Name */}
-            <h3 className="text-2xl font-bold text-primary mb-3 font-['ClashDisplay'] group-hover:text-primary transition-colors">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-2 sm:mb-3 font-['ClashDisplay'] group-hover:text-primary transition-colors">
               {cat.name}
             </h3>
             
             {/* Description */}
-            <p className="text-secondary/90 mb-5 font-['Satoshi'] leading-relaxed">
+            <p className="text-secondary/90 mb-3 sm:mb-5 font-['Satoshi'] leading-relaxed text-sm sm:text-base md:text-lg">
               {cat.description}
             </p>
             
             {/* Additional Info */}
-            <div className="space-y-3 text-sm font-['Satoshi']">
-              <div className="flex items-center text-sceondary">
+            <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm font-['Satoshi']">
+              <div className="flex items-center text-secondary">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
@@ -132,12 +132,12 @@ const EventCategoriesSection = () => (
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>
-                Popular: {cat.popularEvent}
+                <span className="hidden sm:inline">Popular:</span> {cat.popularEvent}
               </div>
             </div>
             
             {/* View Button */}
-            <button className="mt-6 text-sm font-medium text-primary hover:text-primary flex items-center transition font-['Satoshi'] group">
+            <button className="mt-4 sm:mt-6 text-xs sm:text-sm font-medium text-primary hover:text-primary flex items-center transition font-['Satoshi'] group">
               View events
               <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -148,18 +148,18 @@ const EventCategoriesSection = () => (
       </div>
 
       {/* Additional Content - Glass Panel */}
-      <div className="mt-16 bg-white/40 backdrop-blur-md rounded-2xl border border-white/40 p-8 relative overflow-hidden">
-        <div className="absolute -right-20 -top-20 w-64 h-64 bg-primary-button/10 rounded-full blur-2xl"></div>
+      <div className="mt-10 sm:mt-16 bg-white/40 backdrop-blur-md rounded-2xl border border-white/40 p-5 sm:p-8 relative overflow-hidden">
+        <div className="absolute -right-10 -top-10 sm:-right-20 sm:-top-20 w-32 h-32 sm:w-64 sm:h-64 bg-primary-button/10 rounded-full blur-2xl"></div>
         <div className="relative z-10 flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">
-            <h3 className="text-2xl font-bold text-primary mb-4 font-['ClashDisplay']">
-              <span className="text-secondary">Cant't find</span> Your event?
+          <div className="md:w-1/2 mb-4 md:mb-0 md:pr-8">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-2 sm:mb-4 font-['ClashDisplay']">
+              <span className="text-secondary">Can't find</span> Your event?
             </h3>
-            <p className="text-secondary mb-6 font-['Satoshi']">
+            <p className="text-secondary mb-4 sm:mb-6 font-['Satoshi'] text-sm sm:text-base">
               We're constantly expanding our categories. Suggest a new category and help shape
               the platform's future offerings.
             </p>
-            <button className="px-6 py-3 bg-primary-button text-white rounded-xl hover:bg-[#23424A] transition flex items-center font-['Satoshi'] font-medium">
+            <button className="px-4 sm:px-6 py-2 sm:py-3 bg-primary-button text-white rounded-xl hover:bg-[#23424A] transition flex items-center font-['Satoshi'] font-medium text-xs sm:text-sm">
               Suggest a Category
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -167,13 +167,13 @@ const EventCategoriesSection = () => (
             </button>
           </div>
           <div className="md:w-1/2">
-            <div className="bg-white/70 p-6 rounded-xl border border-white/90">
-              <h4 className="font-semibold text-primary mb-4 font-['ClashDisplay']">Coming Soon:</h4>
-              <ul className="grid grid-cols-2 gap-3 font-['Satoshi']">
+            <div className="bg-white/70 p-4 sm:p-6 rounded-xl border border-white/90">
+              <h4 className="font-semibold text-primary mb-2 sm:mb-4 font-['ClashDisplay'] text-sm sm:text-base">Coming Soon:</h4>
+              <ul className="grid grid-cols-2 gap-2 sm:gap-3 font-['Satoshi']">
                 {["Entrepreneurship", "Arts & Crafts", "E-sports", "Food & Cooking"].map((item, index) => (
                   <li key={index} className="flex items-center">
-                    <div className="w-2 h-2 rounded-full bg-primary-button mr-3"></div>
-                    <span className="text-secondary text-sm">{item}</span>
+                    <div className="w-2 h-2 rounded-full bg-primary-button mr-2 sm:mr-3"></div>
+                    <span className="text-secondary text-xs sm:text-sm">{item}</span>
                   </li>
                 ))}
               </ul>
