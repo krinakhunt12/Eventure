@@ -14,8 +14,8 @@ const plans = [
       "Email notifications",
     ],
     button: "Get Started",
-    buttonClass: "bg-primary-button text-[var(--primary-button-text-color)] hover:bg-primary-button-hover",
-    borderClass: "border border-primary",
+    buttonClass: "bg-primary-button text-white hover:bg-[#23424A]",
+    borderClass: "border border-white/40",
     icon: (
       <svg className="w-8 h-8 text-primary-button mb-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" /><path strokeLinecap="round" strokeLinejoin="round" d="M8 12l2 2 4-4" /></svg>
     ),
@@ -32,8 +32,8 @@ const plans = [
       "Custom branding",
     ],
     button: "Start Pro",
-    buttonClass: "bg-primary-button text-[var(--primary-button-text-color)] hover:bg-primary-button-hover",
-    borderClass: "border-2 border-primary scale-105 shadow-lg",
+    buttonClass: "bg-primary-button text-white hover:bg-[#23424A]",
+    borderClass: "border-2 border-primary-button scale-105 shadow-lg",
     icon: (
       <svg className="w-8 h-8 text-secondary mb-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" strokeWidth="2" fill="none" /><path strokeLinecap="round" strokeLinejoin="round" d="M8 12l2 2 4-4" /></svg>
     ),
@@ -50,8 +50,8 @@ const plans = [
       "Onboarding & training",
     ],
     button: "Contact Us",
-    buttonClass: "bg-primary text-primary hover:bg-primary-button-hover",
-    borderClass: "border border-primary",
+    buttonClass: "bg-primary text-white hover:bg-[#23424A]",
+    borderClass: "border border-white/40",
     icon: (
       <svg className="w-8 h-8 text-primary mb-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="6" stroke="currentColor" strokeWidth="2" fill="none" /><path strokeLinecap="round" strokeLinejoin="round" d="M8 12l2 2 4-4" /></svg>
     ),
@@ -80,108 +80,177 @@ const faqs = [
 const Pricing = () => (
   <>
     <Navbar />
-    <div className="min-h-screen bg-primary text-primary font-poppins flex flex-col items-center py-16 px-4">
-      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-primary">
-        Pricing Plans
-      </h1>
-      <p className="text-lg md:text-xl text-secondary mb-10 text-center max-w-2xl">
-        Choose the plan that fits your needs. Simple, transparent pricing for students, organizers, and institutions.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full mb-16">
-        {plans.map((plan, idx) => (
-          <div
-            key={plan.name}
-            className={`bg-white rounded-2xl shadow-lg flex flex-col items-center p-8 ${plan.borderClass} transition-transform duration-300`}
-          >
-            {plan.icon}
-            <h2 className="text-2xl font-semibold mb-2 text-primary">{plan.name}</h2>
-            <p className="mb-4 text-secondary">{plan.description}</p>
-            <span className="text-3xl font-bold mb-4">{plan.price}</span>
-            <ul className="mb-4 text-left list-disc list-inside text-gray-600">
-              {plan.features.map((f, i) => (
-                <li key={i}>{f}</li>
-              ))}
-            </ul>
-            <button className={`px-6 py-2 rounded-lg font-semibold mt-auto ${plan.buttonClass}`}>{plan.button}</button>
-          </div>
-        ))}
+    <div className="min-h-screen bg-primary text-primary font-['Satoshi'] relative overflow-hidden">
+      {/* Geometric background elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+        <div className="absolute top-[10%] left-[10%] w-40 h-40 sm:w-64 sm:h-64 bg-white/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-[20%] right-[15%] w-52 h-52 sm:w-80 sm:h-80 bg-white/15 rounded-full blur-xl"></div>
       </div>
-      <div className="w-full max-w-4xl mb-16">
-        <h3 className="text-2xl font-bold mb-4 text-secondary text-center">Compare Plans</h3>
-        <div className="overflow-x-auto">
-          <table className="min-w-full bg-white rounded-xl shadow border border-primary">
-            <thead>
-              <tr className="bg-primary text-primary">
-                <th className="py-3 px-4 text-left">Feature</th>
-                <th className="py-3 px-4">Free</th>
-                <th className="py-3 px-4">Pro</th>
-                <th className="py-3 px-4">Enterprise</th>
-              </tr>
-            </thead>
-            <tbody className="text-gray-700">
-              <tr>
-                <td className="py-2 px-4">Browse & register for events</td>
-                <td className="text-center">✔️</td>
-                <td className="text-center">✔️</td>
-                <td className="text-center">✔️</td>
-              </tr>
-              <tr className="bg-primary">
-                <td className="py-2 px-4">Host & manage events</td>
-                <td className="text-center">—</td>
-                <td className="text-center">✔️</td>
-                <td className="text-center">✔️</td>
-              </tr>
-              <tr>
-                <td className="py-2 px-4">Advanced analytics</td>
-                <td className="text-center">—</td>
-                <td className="text-center">✔️</td>
-                <td className="text-center">✔️</td>
-              </tr>
-              <tr className="bg-primary">
-                <td className="py-2 px-4">Custom branding</td>
-                <td className="text-center">—</td>
-                <td className="text-center">✔️</td>
-                <td className="text-center">✔️</td>
-              </tr>
-              <tr>
-                <td className="py-2 px-4">Custom integrations</td>
-                <td className="text-center">—</td>
-                <td className="text-center">—</td>
-                <td className="text-center">✔️</td>
-              </tr>
-              <tr className="bg-primary">
-                <td className="py-2 px-4">Dedicated support</td>
-                <td className="text-center">—</td>
-                <td className="text-center">—</td>
-                <td className="text-center">✔️</td>
-              </tr>
-              <tr>
-                <td className="py-2 px-4">SLA & compliance</td>
-                <td className="text-center">—</td>
-                <td className="text-center">—</td>
-                <td className="text-center">✔️</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div className="w-full max-w-3xl mb-16">
-        <h3 className="text-2xl font-bold mb-4 text-secondary text-center">Frequently Asked Questions</h3>
-        <div className="space-y-6">
-          {faqs.map((faq, idx) => (
-            <div key={idx} className="bg-white rounded-xl shadow p-6 border border-[#E0E7EA]">
-              <h4 className="font-semibold text-lg mb-2 text-primary">{faq.q}</h4>
-              <p className="text-gray-600">{faq.a}</p>
+
+      <div className="relative z-10 py-16 px-4 flex flex-col items-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center font-['ClashDisplay'] tracking-tight">
+          PRICING <span className="text-secondary">PLANS</span>
+        </h1>
+        <div className="w-16 sm:w-24 h-1 bg-primary-button mx-auto mb-4 sm:mb-6"></div>
+        <p className="text-lg md:text-xl text-secondary mb-10 text-center max-w-2xl">
+          Choose the plan that fits your needs. Simple, transparent pricing for students, organizers, and institutions.
+        </p>
+        
+        {/* Pricing Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-16">
+          {plans.map((plan, idx) => (
+            <div
+              key={plan.name}
+              className={`bg-white/30 backdrop-blur-md rounded-2xl flex flex-col items-center p-8 ${plan.borderClass} transition-all duration-300 hover:-translate-y-2`}
+            >
+              <div className="p-3 rounded-xl bg-white/50 mb-4">
+                {plan.icon}
+              </div>
+              <h2 className="text-2xl font-semibold mb-2 text-primary font-['ClashDisplay']">{plan.name}</h2>
+              <p className="mb-4 text-secondary/80 text-center">{plan.description}</p>
+              <span className="text-3xl font-bold mb-4 font-['ClashDisplay']">{plan.price}</span>
+              <ul className="mb-4 text-left space-y-2 text-secondary/80 w-full">
+                {plan.features.map((f, i) => (
+                  <li key={i} className="flex items-start">
+                    <svg className="w-4 h-4 mt-1 mr-2 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <button className={`px-6 py-3 rounded-xl font-semibold mt-auto ${plan.buttonClass} shadow-sm hover:shadow-md transition-all font-['Satoshi']`}>
+                {plan.button}
+              </button>
             </div>
           ))}
         </div>
-      </div>
-      <div className="text-center text-gray-500 mt-8">
-        Need a custom solution or have more questions? <span className="text-secondary font-semibold">Contact our team!</span>
+        
+        {/* Comparison Table */}
+        <div className="w-full max-w-4xl mb-16">
+          <h3 className="text-2xl font-bold mb-6 text-center font-['ClashDisplay']">
+            COMPARE <span className="text-secondary">PLANS</span>
+          </h3>
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white/30 backdrop-blur-md rounded-xl border border-white/40">
+              <thead>
+                <tr className="bg-white/50">
+                  <th className="py-4 px-6 text-left font-semibold text-primary font-['Satoshi']">Feature</th>
+                  <th className="py-4 px-6 font-semibold text-primary font-['Satoshi']">Free</th>
+                  <th className="py-4 px-6 font-semibold text-primary font-['Satoshi']">Pro</th>
+                  <th className="py-4 px-6 font-semibold text-primary font-['Satoshi']">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/40">
+                <tr>
+                  <td className="py-3 px-6 text-secondary/80">Browse & register for events</td>
+                  <td className="text-center">
+                    <svg className="w-5 h-5 text-primary-button mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                  <td className="text-center">
+                    <svg className="w-5 h-5 text-primary-button mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                  <td className="text-center">
+                    <svg className="w-5 h-5 text-primary-button mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                </tr>
+                <tr className="bg-white/20">
+                  <td className="py-3 px-6 text-secondary/80">Host & manage events</td>
+                  <td className="text-center text-secondary/60">—</td>
+                  <td className="text-center">
+                    <svg className="w-5 h-5 text-primary-button mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                  <td className="text-center">
+                    <svg className="w-5 h-5 text-primary-button mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-6 text-secondary/80">Advanced analytics</td>
+                  <td className="text-center text-secondary/60">—</td>
+                  <td className="text-center">
+                    <svg className="w-5 h-5 text-primary-button mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                  <td className="text-center">
+                    <svg className="w-5 h-5 text-primary-button mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                </tr>
+                <tr className="bg-white/20">
+                  <td className="py-3 px-6 text-secondary/80">Custom branding</td>
+                  <td className="text-center text-secondary/60">—</td>
+                  <td className="text-center">
+                    <svg className="w-5 h-5 text-primary-button mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                  <td className="text-center">
+                    <svg className="w-5 h-5 text-primary-button mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-6 text-secondary/80">Custom integrations</td>
+                  <td className="text-center text-secondary/60">—</td>
+                  <td className="text-center text-secondary/60">—</td>
+                  <td className="text-center">
+                    <svg className="w-5 h-5 text-primary-button mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                </tr>
+                <tr className="bg-white/20">
+                  <td className="py-3 px-6 text-secondary/80">Dedicated support</td>
+                  <td className="text-center text-secondary/60">—</td>
+                  <td className="text-center text-secondary/60">—</td>
+                  <td className="text-center">
+                    <svg className="w-5 h-5 text-primary-button mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        {/* FAQ Section */}
+        <div className="w-full max-w-3xl mb-16">
+          <h3 className="text-2xl font-bold mb-6 text-center font-['ClashDisplay']">
+            FREQUENTLY <span className="text-secondary">ASKED QUESTIONS</span>
+          </h3>
+          <div className="space-y-4">
+            {faqs.map((faq, idx) => (
+              <div key={idx} className="bg-white/30 backdrop-blur-md rounded-xl border border-white/40 p-6 hover:shadow-lg transition-all">
+                <h4 className="font-semibold text-lg mb-2 text-primary font-['ClashDisplay']">{faq.q}</h4>
+                <p className="text-secondary/80">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* CTA */}
+        <div className="text-center text-secondary/80 mt-8 font-['Satoshi']">
+          Need a custom solution or have more questions?{' '}
+          <span className="text-secondary font-semibold hover:underline cursor-pointer">Contact our team!</span>
+        </div>
       </div>
     </div>
     <Footer />
   </>
 );
 
-export default Pricing; 
+export default Pricing;

@@ -64,34 +64,65 @@ const features = [
 const Features = () => (
   <>
     <Navbar />
-    <div className="min-h-screen bg-primary text-primary font-poppins flex flex-col items-center py-16 px-4">
-      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-primary">
-        Platform Features
-      </h1>
-      <p className="text-lg md:text-xl text-secondary mb-10 text-center max-w-2xl">
-        Discover all the ways Eventure makes campus event management and participation seamless, fun, and impactful for everyone.
-      </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
-        {features.map((feature, idx) => (
-          <div
-            key={idx}
-            className="bg-white rounded-2xl shadow-lg border border-primary flex flex-col items-center p-8 hover:shadow-2xl transition-shadow duration-300"
-          >
-            <div className="mb-4">{feature.icon}</div>
-            <h2 className="text-xl font-bold mb-2 text-primary text-center">{feature.title}</h2>
-            <p className="text-gray-600 text-center">{feature.description}</p>
-          </div>
-        ))}
+    <div className="min-h-screen bg-primary font-['Satoshi'] relative overflow-hidden">
+      {/* Geometric background elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+        <div className="absolute top-[10%] left-[10%] w-40 h-40 sm:w-64 sm:h-64 bg-white/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-[20%] right-[15%] w-52 h-52 sm:w-80 sm:h-80 bg-white/15 rounded-full blur-xl"></div>
       </div>
-      <div className="mt-16 text-center">
-        <h3 className="text-2xl font-semibold mb-2 text-secondary">And much more coming soon!</h3>
-        <p className="text-gray-500 max-w-xl mx-auto">
-          We’re constantly adding new features and improvements based on your feedback. Stay tuned for updates and let us know what you’d love to see next!
-        </p>
+
+      <div className="relative z-10 py-16 px-4 flex flex-col items-center">
+        {/* Section Header */}
+        <div className="text-center mb-12 max-w-3xl">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary font-['ClashDisplay'] tracking-tight">
+            PLATFORM <span className="text-secondary">FEATURES</span>
+          </h1>
+          <div className="w-16 sm:w-24 h-1 bg-primary-button mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-lg md:text-xl text-secondary font-['Satoshi']">
+            Discover all the ways Eventure makes campus event management and participation seamless, fun, and impactful for everyone.
+          </p>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl">
+          {features.map((feature, idx) => (
+            <div
+              key={idx}
+              className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-6 hover:shadow-lg transition-all duration-500 hover:-translate-y-2 group flex flex-col items-center"
+            >
+              {/* Icon with animated background */}
+              <div className="w-16 h-16 rounded-xl bg-white/50 flex items-center justify-center mb-6 group-hover:bg-primary-button/20 transition-colors">
+                {React.cloneElement(feature.icon, {
+                  className: "w-8 h-8 group-hover:scale-110 transition-transform"
+                })}
+              </div>
+              
+              <h2 className="text-xl font-bold text-primary text-center mb-3 font-['ClashDisplay'] group-hover:text-primary transition-colors">
+                {feature.title}
+              </h2>
+              <p className="text-secondary/90 text-center font-['Satoshi'] leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-16 text-center max-w-2xl">
+          <h3 className="text-2xl font-semibold mb-4 text-secondary font-['ClashDisplay']">
+            AND MUCH MORE COMING SOON!
+          </h3>
+          <p className="text-secondary/80 mb-6 font-['Satoshi']">
+            We're constantly adding new features and improvements based on your feedback. Stay tuned for updates and let us know what you'd love to see next!
+          </p>
+          <button className="px-8 py-3 bg-primary-button text-white rounded-xl hover:bg-[#23424A] transition-colors font-medium font-['Satoshi'] shadow-sm hover:shadow-md">
+            Request a Feature
+          </button>
+        </div>
       </div>
     </div>
     <Footer />
   </>
 );
 
-export default Features; 
+export default Features;

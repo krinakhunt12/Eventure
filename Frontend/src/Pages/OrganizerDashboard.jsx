@@ -18,10 +18,10 @@ const ORGANIZER = { name: "Riya" };
 const TODAY = new Date().toLocaleDateString(undefined, { dateStyle: "full" });
 
 const SUMMARY = [
-  { label: "Events Organized", value: 6, icon: <FaCalendarAlt className="w-6 h-6 text-secondary" /> },
-  { label: "Pending Approval", value: 2, icon: <FaHourglassHalf className="w-6 h-6 text-secondary" /> },
-  { label: "Total Participants", value: 320, icon: <FaUsers className="w-6 h-6 text-secondary" /> },
-  { label: "Upcoming Events", value: 3, icon: <FaRegCalendarCheck className="w-6 h-6 text-secondary" /> },
+  { label: "Events Organized", value: 6, icon: <FaCalendarAlt className="w-6 h-6" /> },
+  { label: "Pending Approval", value: 2, icon: <FaHourglassHalf className="w-6 h-6" /> },
+  { label: "Total Participants", value: 320, icon: <FaUsers className="w-6 h-6" /> },
+  { label: "Upcoming Events", value: 3, icon: <FaRegCalendarCheck className="w-6 h-6" /> },
 ];
 
 const EVENTS = [
@@ -63,16 +63,26 @@ const OrganizerDashboard = () => {
   return (
     <>
       <DashboardNavbar />
-      <div className="min-h-screen bg-primary py-8 px-4 font-poppins">
-        <div className="max-w-7xl mx-auto">
+      <div className="min-h-screen bg-primary py-8 px-4 font-['Satoshi'] relative overflow-hidden">
+        {/* Geometric background elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+          <div className="absolute top-[10%] left-[10%] w-40 h-40 sm:w-64 sm:h-64 bg-white/20 rounded-full blur-xl"></div>
+          <div className="absolute bottom-[20%] right-[15%] w-52 h-52 sm:w-80 sm:h-80 bg-white/15 rounded-full blur-xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           {/* Welcome Section */}
           <div className="mb-10">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between">
               <div>
-                <h1 className="text-3xl font-bold text-primary mb-1">Welcome, {ORGANIZER.name}!</h1>
-                <p className="text-secondary font-medium">{TODAY}</p>
+                <h1 className="text-3xl font-bold text-primary mb-1 font-['ClashDisplay'] tracking-tight">
+                  WELCOME, <span className="text-secondary">{ORGANIZER.name}!</span>
+                </h1>
+                <p className="text-secondary font-medium font-['Satoshi']">{TODAY}</p>
               </div>
-              <p className="text-gray-600 mt-2 md:mt-0 md:text-right">Check your events, stats, and actions below.</p>
+              <p className="text-secondary/80 mt-2 md:mt-0 md:text-right font-['Satoshi']">
+                Check your events, stats, and actions below.
+              </p>
             </div>
             <div className="w-20 h-1 bg-primary-button mt-4 rounded-full"></div>
           </div>
@@ -82,77 +92,77 @@ const OrganizerDashboard = () => {
             {SUMMARY.map((item) => (
               <div 
                 key={item.label} 
-                className="bg-white rounded-lg shadow-sm border border-[#E0E7EA] p-6 hover:shadow-md transition-shadow"
+                className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex items-center">
-                  <div className="p-2 rounded-lg bg-[#E0E7EA] mr-4">
-                    {item.icon}
+                  <div className="p-3 rounded-xl bg-white/50 mr-4">
+                    {React.cloneElement(item.icon, { className: "w-6 h-6 text-primary" })}
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-secondary">{item.value}</h3>
-                    <p className="text-sm text-primary mt-1">{item.label}</p>
+                    <h3 className="text-2xl font-bold text-secondary font-['ClashDisplay']">{item.value}</h3>
+                    <p className="text-sm text-primary mt-1 font-['Satoshi']">{item.label}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-6">
             {/* Events Table - Main Content */}
             <div className="lg:col-span-2">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
                 <div>
-                  <h2 className="text-xl font-bold text-primary">My Events</h2>
-                  <p className="text-sm text-gray-600 mt-1">Manage your upcoming and past events</p>
+                  <h2 className="text-xl font-bold text-primary font-['ClashDisplay']">MY EVENTS</h2>
+                  <p className="text-sm text-secondary/80 mt-1 font-['Satoshi']">Manage your upcoming and past events</p>
                 </div>
                 <a 
                   href="/create-event" 
-                  className="flex items-center justify-center px-4 py-2 bg-primary-button text-white rounded-lg mt-3 sm:mt-0 hover:bg-primary-button transition"
+                  className="flex items-center justify-center px-4 py-2 bg-primary-button text-white rounded-xl mt-3 sm:mt-0 hover:bg-[#23424A] transition font-['Satoshi'] shadow-sm hover:shadow-md"
                 >
                   <FaPlus className="w-4 h-4 mr-2" />
                   Create New
                 </a>
               </div>
               
-              <div className="bg-white rounded-lg shadow-sm border border-[#E0E7EA] overflow-hidden">
+              <div className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 overflow-hidden">
                 <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-[#E0E7EA]">
-                    <thead className="bg-[#F6FAFB]">
+                  <table className="min-w-full divide-y divide-white/40">
+                    <thead className="bg-white/50">
                       <tr>
                         {["Title", "Date", "Venue", "Status", "Registrations", "Actions"].map((head) => (
                           <th 
                             key={head} 
-                            className="px-6 py-3 text-left text-xs font-semibold text-primary uppercase tracking-wider"
+                            className="px-6 py-3 text-left text-xs font-semibold text-primary uppercase tracking-wider font-['Satoshi']"
                           >
                             {head}
                           </th>
                         ))}
                       </tr>
                     </thead>
-                    <tbody className="bg-white divide-y divide-[#E0E7EA]">
+                    <tbody className="divide-y divide-white/40">
                       {EVENTS.map((event) => (
                         <tr 
                           key={event.id} 
-                          className="hover:bg-[#B6E2D3]/20 transition"
+                          className="hover:bg-white/30 transition"
                         >
-                          <td className="px-6 py-4 whitespace-nowrap font-medium text-primary">
+                          <td className="px-6 py-4 whitespace-nowrap font-medium text-primary font-['Satoshi']">
                             {event.title}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                          <td className="px-6 py-4 whitespace-nowrap text-secondary/80 font-['Satoshi']">
                             {event.date}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                          <td className="px-6 py-4 whitespace-nowrap text-secondary/80 font-['Satoshi']">
                             {event.venue}
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
-                            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${STATUS_COLORS[event.status]}`}>
+                            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${STATUS_COLORS[event.status]} font-['Satoshi']`}>
                               {event.status}
                             </span>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-center font-bold text-secondary">
+                          <td className="px-6 py-4 whitespace-nowrap text-center font-bold text-secondary font-['ClashDisplay']">
                             {event.registrations}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium font-['Satoshi']">
                             <a href="#" className="text-secondary hover:underline mr-4">View</a>
                             <a href="#" className="text-secondary hover:underline">Edit</a>
                           </td>
@@ -169,17 +179,17 @@ const OrganizerDashboard = () => {
               {/* Quick Actions */}
               <div>
                 <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-lg bg-[#E0E7EA] mr-3">
-                    <FaBell className="w-4 h-4 text-secondary" />
+                  <div className="p-2 rounded-lg bg-white/50 mr-3">
+                    <FaBell className="w-4 h-4 text-primary" />
                   </div>
-                  <h2 className="text-lg font-bold text-primary">Quick Actions</h2>
+                  <h2 className="text-lg font-bold text-primary font-['ClashDisplay']">QUICK ACTIONS</h2>
                 </div>
                 <div className="space-y-3">
                   {ACTIONS.map((action) => (
                     <a
                       key={action.label}
                       href={action.href}
-                      className="flex items-center px-4 py-3 bg-white border border-[#E0E7EA] rounded-lg shadow-sm text-secondary font-medium hover:bg-[#B6E2D3]/30 transition"
+                      className="flex items-center px-4 py-3 bg-white/30 backdrop-blur-md border border-white/40 rounded-xl text-secondary font-medium hover:bg-primary-button/20 transition font-['Satoshi']"
                     >
                       {action.icon}
                       {action.label}
@@ -191,19 +201,19 @@ const OrganizerDashboard = () => {
               {/* Notifications */}
               <div>
                 <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-lg bg-[#E0E7EA] mr-3">
-                    <FaBell className="w-4 h-4 text-secondary" />
+                  <div className="p-2 rounded-lg bg-white/50 mr-3">
+                    <FaBell className="w-4 h-4 text-primary" />
                   </div>
-                  <h2 className="text-lg font-bold text-primary">Notifications</h2>
+                  <h2 className="text-lg font-bold text-primary font-['ClashDisplay']">NOTIFICATIONS</h2>
                 </div>
-                <div className="bg-white rounded-lg shadow-sm border border-[#E0E7EA] p-4 space-y-3">
+                <div className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-4 space-y-3">
                   {NOTIFICATIONS.length === 0 ? (
-                    <p className="text-center text-gray-500 py-4">No notifications</p>
+                    <p className="text-center text-secondary/80 py-4 font-['Satoshi']">No notifications</p>
                   ) : (
                     NOTIFICATIONS.map((note) => (
                       <div 
                         key={note.id} 
-                        className="flex items-start gap-3 p-3 rounded-lg hover:bg-[#E0E7EA]/50 transition"
+                        className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/30 transition font-['Satoshi']"
                       >
                         <div className="p-2 rounded-full bg-[#B6E2D3] text-secondary">
                           <FaBell className="w-3 h-3" />
@@ -212,7 +222,7 @@ const OrganizerDashboard = () => {
                           <p className="text-sm font-medium text-primary">
                             {note.message}
                           </p>
-                          <p className="text-xs text-gray-400 mt-1">{note.time}</p>
+                          <p className="text-xs text-secondary/60 mt-1">{note.time}</p>
                         </div>
                       </div>
                     ))
@@ -223,21 +233,21 @@ const OrganizerDashboard = () => {
               {/* Chart */}
               <div>
                 <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-lg bg-[#E0E7EA] mr-3">
-                    <FaUsers className="w-4 h-4 text-secondary" />
+                  <div className="p-2 rounded-lg bg-white/50 mr-3">
+                    <FaUsers className="w-4 h-4 text-primary" />
                   </div>
-                  <h2 className="text-lg font-bold text-primary">Participants per Event</h2>
+                  <h2 className="text-lg font-bold text-primary font-['ClashDisplay']">PARTICIPANTS</h2>
                 </div>
-                <div className="bg-white rounded-lg shadow-sm border border-[#E0E7EA] p-5">
+                <div className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-5">
                   {CHART_DATA.map((bar) => (
                     <div key={bar.event} className="mb-4">
-                      <div className="flex justify-between mb-2 text-sm">
+                      <div className="flex justify-between mb-2 text-sm font-['Satoshi']">
                         <span className="font-medium text-primary">{bar.event}</span>
                         <span className="font-bold text-secondary">{bar.participants}</span>
                       </div>
-                      <div className="w-full bg-[#E0E7EA] rounded-full h-2.5">
+                      <div className="w-full bg-white/50 rounded-full h-2.5">
                         <div 
-                          className="h-2.5 rounded-full bg-[#7FC8A9]" 
+                          className="h-2.5 rounded-full bg-primary-button" 
                           style={{ width: `${(bar.participants / maxParticipants) * 100}%` }}
                         ></div>
                       </div>
