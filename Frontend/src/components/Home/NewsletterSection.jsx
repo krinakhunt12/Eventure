@@ -38,32 +38,32 @@ const NewsletterSection = () => {
               <h3 className="text-xl font-semibold text-primary mb-4 font-['ClashDisplay']">WHAT YOU'LL GET:</h3>
               <ul className="space-y-3 text-secondary/90 font-['Satoshi']">
                 <li className="flex items-start">
-                  <FiCheckCircle className="text-[#2a6168] mt-1 mr-3 flex-shrink-0" />
+                  <FiCheckCircle className="text-primary mt-1 mr-3 flex-shrink-0" />
                   <span>Weekly event digests</span>
                 </li>
                 <li className="flex items-start">
-                  <FiCheckCircle className="text-[#2a6168] mt-1 mr-3 flex-shrink-0" />
+                  <FiCheckCircle className="text-primary mt-1 mr-3 flex-shrink-0" />
                   <span>Exclusive early access to popular events</span>
                 </li>
                 <li className="flex items-start">
-                  <FiCheckCircle className="text-[#2a6168] mt-1 mr-3 flex-shrink-0" />
+                  <FiCheckCircle className="text-primary mt-1 mr-3 flex-shrink-0" />
                   <span>Special offers for subscribers</span>
                 </li>
                 <li className="flex items-start">
-                  <FiCheckCircle className="text-[#2a6168] mt-1 mr-3 flex-shrink-0" />
+                  <FiCheckCircle className="text-primary mt-1 mr-3 flex-shrink-0" />
                   <span>Campus news and important announcements</span>
                 </li>
               </ul>
             </div>
             
             <div className="flex justify-center md:justify-start space-x-5">
-              <a href="#" className="text-secondary/80 hover:text-[#2a6168] transition-colors" aria-label="Follow us on Twitter">
+              <a href="#" className="text-secondary/80 hover:text-primary transition-colors" aria-label="Follow us on Twitter">
                 <FaTwitter size={22} />
               </a>
-              <a href="#" className="text-secondary/80 hover:text-[#2a6168] transition-colors" aria-label="Follow us on Instagram">
+              <a href="#" className="text-secondary/80 hover:text-primary transition-colors" aria-label="Follow us on Instagram">
                 <FaInstagram size={22} />
               </a>
-              <a href="#" className="text-secondary/80 hover:text-[#2a6168] transition-colors" aria-label="Follow us on LinkedIn">
+              <a href="#" className="text-secondary/80 hover:text-primary transition-colors" aria-label="Follow us on LinkedIn">
                 <FaLinkedin size={22} />
               </a>
             </div>
@@ -73,14 +73,14 @@ const NewsletterSection = () => {
           <div className="bg-white/30 backdrop-blur-md rounded-2xl p-8 border border-white/40 shadow-lg hover:shadow-xl transition-all">
             {submitted ? (
               <div className="text-center py-8">
-                <FiCheckCircle className="text-[#2a6168] w-14 h-14 mx-auto mb-5" />
+                <FiCheckCircle className="text-primary w-14 h-14 mx-auto mb-5" />
                 <h3 className="text-2xl font-bold text-primary mb-3 font-['ClashDisplay']">THANK YOU!</h3>
                 <p className="text-secondary/90 mb-6 font-['Satoshi']">
                   You've been successfully subscribed to our newsletter.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="text-[#2a6168] hover:text-primary font-medium transition-colors font-['Satoshi']"
+                  className="text-primary hover:text-primary font-medium transition-colors font-['Satoshi']"
                 >
                   Subscribe another email
                 </button>
@@ -89,7 +89,7 @@ const NewsletterSection = () => {
               <>
                 <div className="flex items-center justify-center mb-6">
                   <div className="bg-primary-button/10 p-4 rounded-full">
-                    <FiMail className="text-[#2a6168] w-8 h-8" />
+                    <FiMail className="text-primary w-8 h-8" />
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold text-center text-primary mb-4 font-['ClashDisplay']">

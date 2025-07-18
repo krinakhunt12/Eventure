@@ -75,7 +75,7 @@ const UpcomingEventsSection = () => (
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               {/* Category Badge */}
-              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-[#2a6168] shadow-sm">
+              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-primary shadow-sm">
                 {event.category}
               </div>
             </div>
@@ -83,10 +83,10 @@ const UpcomingEventsSection = () => (
             {/* Event Content */}
             <div className="p-6 flex-1 flex flex-col">
               <div className="flex justify-between items-start mb-3">
-                <h3 className="text-xl font-bold text-primary group-hover:text-[#2a6168] transition-colors font-['ClashDisplay']">
+                <h3 className="text-xl font-bold text-primary group-hover:text-primary transition-colors font-['ClashDisplay']">
                   {event.title}
                 </h3>
-                <span className="bg-primary-button/10 text-[#2a6168] text-xs font-medium px-2.5 py-0.5 rounded font-['Satoshi']">
+                <span className="bg-primary-button/10 text-primary text-xs font-medium px-2.5 py-0.5 rounded font-['Satoshi']">
                   {event.seats} seats left
                 </span>
               </div>
@@ -94,19 +94,19 @@ const UpcomingEventsSection = () => (
               {/* Event Details */}
               <div className="space-y-2 mb-4 font-['Satoshi']">
                 <div className="flex items-center text-secondary/90">
-                  <FaCalendarAlt className="mr-2 text-[#2a6168]" />
+                  <FaCalendarAlt className="mr-2 text-primary" />
                   <span>{new Date(event.date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</span>
                 </div>
                 <div className="flex items-center text-secondary/90">
-                  <FaClock className="mr-2 text-[#2a6168]" />
+                  <FaClock className="mr-2 text-primary" />
                   <span>{event.time}</span>
                 </div>
                 <div className="flex items-center text-secondary/90">
-                  <FaMapMarkerAlt className="mr-2 text-[#2a6168]" />
+                  <FaMapMarkerAlt className="mr-2 text-primary" />
                   <span>{event.location}</span>
                 </div>
                 <div className="flex items-center text-secondary/90">
-                  <FaTicketAlt className="mr-2 text-[#2a6168]" />
+                  <FaTicketAlt className="mr-2 text-primary" />
                   <span>{event.price}</span>
                 </div>
               </div>
@@ -121,7 +121,7 @@ const UpcomingEventsSection = () => (
                 <button className="flex-1 bg-primary-button text-white font-medium py-2 px-4 rounded-lg hover:bg-[#23424A] transition duration-300 font-['Satoshi']">
                   Register Now
                 </button>
-                <button className="flex-1 border border-[#2a6168] text-[#2a6168] hover:bg-primary-button/10 font-medium py-2 px-4 rounded-lg transition duration-300 font-['Satoshi']">
+                <button className="flex-1 border border-primary text-primary hover:bg-primary-button/10 font-medium py-2 px-4 rounded-lg transition duration-300 font-['Satoshi']">
                   Learn More
                 </button>
               </div>
@@ -132,7 +132,7 @@ const UpcomingEventsSection = () => (
       
       {/* View All Button */}
       <div className="text-center mt-12">
-        <button className="bg-white/30 backdrop-blur-md border-2 border-[#2a6168] text-[#2a6168] hover:bg-primary-button hover:text-white font-medium py-2 px-6 rounded-full transition duration-300 font-['Satoshi']">
+        <button className="bg-white/30 backdrop-blur-md border-2 border-primary text-primary hover:bg-primary-button hover:text-white font-medium py-2 px-6 rounded-full transition duration-300 font-['Satoshi']">
           View All Events
         </button>
       </div>

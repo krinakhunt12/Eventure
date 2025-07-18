@@ -125,12 +125,12 @@ const FeaturesSection = () => (
             {/* Icon with geometric background */}
             <div className="w-14 h-14 rounded-xl bg-white/50 flex items-center justify-center mb-6 group-hover:bg-primary-button/20 transition-colors">
               {React.cloneElement(feature.icon, { 
-                className: "w-6 h-6 text-primary group-hover:text-[#2a6168] transition-colors" 
+                className: "w-6 h-6 text-primary group-hover:text-primary transition-colors" 
               })}
             </div>
             
             {/* Feature Title */}
-            <h3 className="text-xl font-bold text-primary mb-4 font-['ClashDisplay'] group-hover:text-[#2a6168] transition-colors">
+            <h3 className="text-xl font-bold text-primary mb-4 font-['ClashDisplay'] group-hover:text-primary transition-colors">
               {feature.title}
             </h3>
             
@@ -145,7 +145,7 @@ const FeaturesSection = () => (
               <ul className="space-y-3">
                 {feature.benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start">
-                    <svg className="w-4 h-4 mt-1 mr-2 text-[#2a6168] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 mt-1 mr-2 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                     <span className="text-sm text-secondary/90 font-['Satoshi']">{benefit}</span>

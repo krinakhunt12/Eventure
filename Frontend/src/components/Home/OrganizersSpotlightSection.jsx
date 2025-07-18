@@ -84,7 +84,7 @@ const OrganizersSpotlightSection = () => (
               <img
                 src={org.avatar}
                 alt={org.name}
-                className="w-28 h-28 rounded-full object-cover border-4 border-white/50 group-hover:border-[#2a6168]/50 transition-colors"
+                className="w-28 h-28 rounded-full object-cover border-4 border-white/50 group-hover:border-primary/50 transition-colors"
               />
               <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-primary-button text-white text-xs font-medium px-4 py-1 rounded-full font-['Satoshi'] shadow-sm">
                 {org.role.split(' ')[0]}
@@ -92,7 +92,7 @@ const OrganizersSpotlightSection = () => (
             </div>
             
             {/* Organizer Info */}
-            <h3 className="text-xl font-bold text-primary mb-2 font-['ClashDisplay'] group-hover:text-[#2a6168] transition-colors">
+            <h3 className="text-xl font-bold text-primary mb-2 font-['ClashDisplay'] group-hover:text-primary transition-colors">
               {org.name}
             </h3>
             <div className="text-secondary/80 text-sm mb-4 font-medium font-['Satoshi']">
@@ -106,21 +106,21 @@ const OrganizersSpotlightSection = () => (
             <div className="flex space-x-4 mt-auto">
               <a 
                 href={org.social.linkedin} 
-                className="text-secondary/80 hover:text-[#2a6168] transition-colors"
+                className="text-secondary/80 hover:text-primary transition-colors"
                 aria-label={`Connect with ${org.name} on LinkedIn`}
               >
                 <FaLinkedin size={18} />
               </a>
               <a 
                 href={org.social.twitter} 
-                className="text-secondary/80 hover:text-[#2a6168] transition-colors"
+                className="text-secondary/80 hover:text-primary transition-colors"
                 aria-label={`Follow ${org.name} on Twitter`}
               >
                 <FaTwitter size={18} />
               </a>
               <a 
                 href={`mailto:${org.social.email}`} 
-                className="text-secondary/80 hover:text-[#2a6168] transition-colors"
+                className="text-secondary/80 hover:text-primary transition-colors"
                 aria-label={`Email ${org.name}`}
               >
                 <FaEnvelope size={18} />

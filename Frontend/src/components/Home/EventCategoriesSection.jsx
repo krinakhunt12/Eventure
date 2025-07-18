@@ -87,8 +87,8 @@ const EventCategoriesSection = () => (
     <div className="max-w-7xl mx-auto px-6 relative z-10">
       {/* Section Header with custom font */}
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-['ClashDisplay'] tracking-tight">
-          EXPLORE EVENT <span className="text-secondary">CATEGORIES</span>
+        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-['ClashDisplay'] tracking-tight uppercase">
+          Explore Event <span className="text-secondary">Categories</span>
         </h2>
         <div className="w-24 h-1 bg-primary-button mx-auto mb-6"></div>
         <p className="text-lg text-secondary max-w-2xl mx-auto font-['Satoshi']">
@@ -106,12 +106,12 @@ const EventCategoriesSection = () => (
             {/* Icon with geometric background */}
             <div className={`p-4 mb-6 rounded-xl w-16 h-16 flex items-center justify-center ${cat.color} bg-opacity-80`}>
               {React.cloneElement(cat.icon, { 
-                className: "w-8 h-8 text-white group-hover:scale-110 transition-transform" 
+                className: "w-8 h-8 text-primary group-hover:scale-110 transition-transform" 
               })}
             </div>
             
             {/* Category Name */}
-            <h3 className="text-2xl font-bold text-primary mb-3 font-['ClashDisplay'] group-hover:text-[#2a6168] transition-colors">
+            <h3 className="text-2xl font-bold text-primary mb-3 font-['ClashDisplay'] group-hover:text-primary transition-colors">
               {cat.name}
             </h3>
             
@@ -122,13 +122,13 @@ const EventCategoriesSection = () => (
             
             {/* Additional Info */}
             <div className="space-y-3 text-sm font-['Satoshi']">
-              <div className="flex items-center text-[#2a6168]">
+              <div className="flex items-center text-sceondary">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
                 {cat.stats}
               </div>
-              <div className="flex items-center text-[#2a6168]">
+              <div className="flex items-center text-secondary">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>
@@ -137,7 +137,7 @@ const EventCategoriesSection = () => (
             </div>
             
             {/* View Button */}
-            <button className="mt-6 text-sm font-medium text-[#2a6168] hover:text-primary flex items-center transition font-['Satoshi'] group">
+            <button className="mt-6 text-sm font-medium text-primary hover:text-primary flex items-center transition font-['Satoshi'] group">
               View events
               <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -153,7 +153,7 @@ const EventCategoriesSection = () => (
         <div className="relative z-10 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">
             <h3 className="text-2xl font-bold text-primary mb-4 font-['ClashDisplay']">
-              <span className="text-[#2a6168]">CAN'T FIND</span> YOUR EVENT?
+              <span className="text-secondary">Cant't find</span> Your event?
             </h3>
             <p className="text-secondary mb-6 font-['Satoshi']">
               We're constantly expanding our categories. Suggest a new category and help shape

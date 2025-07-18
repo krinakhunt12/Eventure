@@ -30,9 +30,9 @@ const CTASection = () => (
           {/* Stats row */}
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             {[
-              { icon: <Users className="text-[#2a6168]" />, text: "500+ Campuses" },
-              { icon: <Calendar className="text-[#2a6168]" />, text: "10,000+ Events" },
-              { icon: <TrendingUp className="text-[#2a6168]" />, text: "3x Engagement" }
+              { icon: <Users className="text-primary" />, text: "500+ Campuses" },
+              { icon: <Calendar className="text-primary" />, text: "10,000+ Events" },
+              { icon: <TrendingUp className="text-primary" />, text: "3x Engagement" }
             ].map((stat, index) => (
               <div 
                 key={index} 
@@ -54,7 +54,7 @@ const CTASection = () => (
             </Button>
             <Button
               variant="outline"
-              className="border-2 border-[#2a6168] text-[#2a6168] hover:bg-primary-button/10 px-8 py-6 text-lg rounded-xl shadow-lg transition-all duration-300 hover:scale-105 font-['Satoshi']"
+              className="border-2 border-primary text-primary hover:bg-primary-button/10 px-8 py-6 text-lg rounded-xl shadow-lg transition-all duration-300 hover:scale-105 font-['Satoshi']"
             >
               <Play className="w-5 h-5 mr-2" />
               Watch Demo

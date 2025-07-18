@@ -118,14 +118,14 @@ const MostPopularEvents = () => (
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               {/* Category Badge */}
-              <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-[#2a6168]">
+              <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-primary">
                 {event.category}
               </div>
             </div>
             
             {/* Event Content */}
             <div className="p-6">
-              <h3 className="text-xl font-bold text-primary mb-3 font-['ClashDisplay'] group-hover:text-[#2a6168] transition-colors">
+              <h3 className="text-xl font-bold text-primary mb-3 font-['ClashDisplay'] group-hover:text-primary transition-colors">
                 {event.title}
               </h3>
               <p className="text-secondary/90 mb-4 font-['Satoshi']">{event.description}</p>
@@ -133,20 +133,20 @@ const MostPopularEvents = () => (
               {/* Event Meta */}
               <div className="space-y-3 text-sm text-secondary/90 mb-5 font-['Satoshi']">
                 <div className="flex items-center">
-                  <svg className="w-4 h-4 mr-2 text-[#2a6168]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                   {event.date}
                 </div>
                 <div className="flex items-center">
-                  <svg className="w-4 h-4 mr-2 text-[#2a6168]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   {event.location}
                 </div>
                 <div className="flex items-center">
-                  <svg className="w-4 h-4 mr-2 text-[#2a6168]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                   {event.registrations} registered
@@ -158,7 +158,7 @@ const MostPopularEvents = () => (
                 <button className="flex-1 px-3 py-2 bg-primary-button text-white text-sm rounded-lg hover:bg-[#23424A] transition flex items-center justify-center font-['Satoshi']">
                   Register Now
                 </button>
-                <button className="px-3 py-2 border border-[#2a6168] text-[#2a6168] text-sm rounded-lg hover:bg-primary-button/10 transition flex items-center justify-center">
+                <button className="px-3 py-2 border border-primary text-primary text-sm rounded-lg hover:bg-primary-button/10 transition flex items-center justify-center">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
@@ -171,7 +171,7 @@ const MostPopularEvents = () => (
 
       {/* View All Button */}
       <div className="text-center mt-12">
-        <button className="px-6 py-3 bg-white/30 backdrop-blur-md border-2 border-[#2a6168] text-[#2a6168] rounded-xl hover:bg-primary-button hover:text-white transition flex items-center mx-auto font-['Satoshi'] font-medium">
+        <button className="px-6 py-3 bg-white/30 backdrop-blur-md border-2 border-primary text-primary rounded-xl hover:bg-primary-button hover:text-white transition flex items-center mx-auto font-['Satoshi'] font-medium">
           View All Upcoming Events
           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -186,7 +186,7 @@ const MostPopularEvents = () => (
           <div className="md:w-1/3 mb-8 md:mb-0 md:pr-8">
             <div className="bg-white/70 p-6 rounded-xl border border-white/90 h-full">
               <h3 className="text-xl font-bold text-primary mb-4 font-['ClashDisplay']">
-                <span className="text-[#2a6168]">WHY ATTEND</span> THESE EVENTS?
+                <span className="text-secondary">Why attend</span> these events?
               </h3>
               <ul className="space-y-3 font-['Satoshi']">
                 {[
@@ -205,8 +205,8 @@ const MostPopularEvents = () => (
             </div>
           </div>
           <div className="md:w-2/3">
-            <h3 className="text-xl font-bold text-primary mb-4 font-['ClashDisplay']">
-              WHAT OUR <span className="text-[#2a6168]">ATTENDEES SAY</span>
+            <h3 className="text-xl font-bold text-secondary mb-4 font-['ClashDisplay'] uppercase">
+              What our <span className="text-primary">Attendees say</span>
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
@@ -222,7 +222,7 @@ const MostPopularEvents = () => (
                 }
               ].map((testimonial, index) => (
                 <div key={index} className="bg-white/70 p-5 rounded-xl border border-white/90">
-                  <svg className="w-6 h-6 text-[#2a6168] mb-3" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-primary mb-3" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
                   <p className="text-secondary/90 mb-3 italic font-['Satoshi']">"{testimonial.quote}"</p>

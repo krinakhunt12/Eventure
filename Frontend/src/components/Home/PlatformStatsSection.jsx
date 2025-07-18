@@ -78,7 +78,7 @@ const PlatformStatsSection = () => (
             <div className="flex flex-col items-center text-center">
               {/* Icon with geometric background */}
               <div className="p-4 mb-6 bg-white/50 rounded-xl w-20 h-20 flex items-center justify-center">
-                {React.cloneElement(stat.icon, { className: "w-10 h-10 text-[#2a6168]" })}
+                {React.cloneElement(stat.icon, { className: "w-10 h-10 text-primary" })}
               </div>
               
               {/* Stat Value with custom font */}

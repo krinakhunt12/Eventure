@@ -81,7 +81,7 @@ const TestimonialsSection = () => {
         
         <div className="relative">
           <div className="bg-white/30 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/40 shadow-lg relative overflow-hidden">
-            <div className="absolute top-8 left-8 text-[#2a6168]/10">
+            <div className="absolute top-8 left-8 text-primary/10">
               <FaQuoteLeft size={60} />
             </div>
             
@@ -90,7 +90,7 @@ const TestimonialsSection = () => {
                 <img 
                   src={testimonials[currentTestimonial].avatar} 
                   alt={testimonials[currentTestimonial].name}
-                  className="w-24 h-24 rounded-full object-cover border-4 border-white/50 shadow-md hover:border-[#2a6168]/50 transition-colors"
+                  className="w-24 h-24 rounded-full object-cover border-4 border-white/50 shadow-md hover:border-primary/50 transition-colors"
                 />
               </div>
               
