@@ -50,7 +50,7 @@ const About = () => (
         <div className="max-w-xl sm:max-w-2xl md:max-w-4xl w-full mb-10 sm:mb-14 md:mb-16 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
             <div className="bg-white/30 backdrop-blur-md rounded-2xl p-5 sm:p-8 border border-white/40 flex flex-col items-center hover:shadow-lg transition-all">
-              <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#2a6168] mb-3 sm:mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <svg className="w-8 h-8 sm:w-10 sm:h-10 text-secondary mb-3 sm:mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
               </svg>
               <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2text-primary font-['ClashDisplay']">OUR MISSION</h2>
@@ -59,7 +59,7 @@ const About = () => (
               </p>
             </div>
             <div className="bg-white/30 backdrop-blur-md rounded-2xl p-5 sm:p-8 border border-white/40 flex flex-col items-center hover:shadow-lg transition-all">
-              <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#2a6168] mb-3 sm:mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <svg className="w-8 h-8 sm:w-10 sm:h-10 text-secondary mb-3 sm:mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 1.343-3 3 0 1.657 1.343 3 3 3s3-1.343 3-3c0-1.657-1.343-3-3-3zm0 0V4m0 8v8" />
               </svg>
               <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2text-primary font-['ClashDisplay']">OUR VISION</h2>

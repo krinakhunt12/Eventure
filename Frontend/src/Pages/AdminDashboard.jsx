@@ -8,10 +8,10 @@ const ADMIN = { name: "Admin" };
 const TODAY = new Date().toLocaleDateString(undefined, { dateStyle: "full" });
 
 const SUMMARY = [
-  { label: "Total Events", value: 28, icon: <FaCalendarAlt className="w-6 h-6 sm:w-7 sm:h-7 text-[#2a6168]" /> },
-  { label: "Pending Approvals", value: 4, icon: <FaHourglassHalf className="w-6 h-6 sm:w-7 sm:h-7 text-[#2a6168]" /> },
-  { label: "Registered Students", value: 1200, icon: <FaUserGraduate className="w-6 h-6 sm:w-7 sm:h-7 text-[#2a6168]" /> },
-  { label: "Active Organizers", value: 18, icon: <FaUserTie className="w-6 h-6 sm:w-7 sm:h-7 text-[#2a6168]" /> },
+  { label: "Total Events", value: 28, icon: <FaCalendarAlt className="w-6 h-6 sm:w-7 sm:h-7 text-secondary" /> },
+  { label: "Pending Approvals", value: 4, icon: <FaHourglassHalf className="w-6 h-6 sm:w-7 sm:h-7 text-secondary" /> },
+  { label: "Registered Students", value: 1200, icon: <FaUserGraduate className="w-6 h-6 sm:w-7 sm:h-7 text-secondary" /> },
+  { label: "Active Organizers", value: 18, icon: <FaUserTie className="w-6 h-6 sm:w-7 sm:h-7 text-secondary" /> },
 ];
 
 const PENDING_EVENTS = [
@@ -66,7 +66,7 @@ const AdminDashboard = () => {
                 className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 flex flex-col items-center p-5 sm:p-7 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group"
               >
                 <div className="mb-2 sm:mb-3 group-hover:scale-110 transition-transform">{item.icon}</div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-[#2a6168] mb-0.5 sm:mb-1">{item.value}</div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-secondary mb-0.5 sm:mb-1">{item.value}</div>
                 <div className="text-xs sm:text-basetext-primary font-medium text-center font-['Satoshi']">{item.label}</div>
               </div>
             ))}
@@ -81,7 +81,7 @@ const AdminDashboard = () => {
             <div className="md:col-span-2">
               <div className="mb-3 sm:mb-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
                 <h2 className="text-lg sm:text-2xl font-boldtext-primary font-['ClashDisplay']">EVENT APPROVALS</h2>
-                <a href="/events" className="text-xs sm:text-sm text-[#2a6168] hover:underline font-medium font-['Satoshi']">View All</a>
+                <a href="/events" className="text-xs sm:text-sm text-secondary hover:underline font-medium font-['Satoshi']">View All</a>
               </div>
               <div className="overflow-x-auto rounded-2xl shadow-lg border border-white/40 bg-white/30 backdrop-blur-md">
                 <table className="min-w-full divide-y divide-white/40 text-xs sm:text-sm">
@@ -96,13 +96,13 @@ const AdminDashboard = () => {
                   </thead>
                   <tbody>
                     {PENDING_EVENTS.map((event) => (
-                      <tr key={event.id} className="hover:bg-[#2a6168]/10 transition-colors">
+                      <tr key={event.id} className="hover:bg-secondary transition-colors">
                         <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 font-mediumtext-primary font-['Satoshi']">{event.title}</td>
                         <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-[#4A4A4A]/80 font-['Satoshi']">{event.organizer}</td>
                         <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-[#4A4A4A]/80 font-['Satoshi']">{event.date}</td>
                         <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-[#4A4A4A]/80 font-['Satoshi']">{event.venue}</td>
                         <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 flex gap-1 sm:gap-2">
-                          <button className="flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-[#2a6168] text-white rounded-lg hover:bg-[#23424A] transition-colors text-xs font-semibold font-['Satoshi']">
+                          <button className="flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-primary-button text-white rounded-lg hover:bg-[#23424A] transition-colors text-xs font-semibold font-['Satoshi']">
                             <FaCheck className="mr-1" /> Approve
                           </button>
                           <button className="flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors text-xs font-semibold font-['Satoshi']">
@@ -120,7 +120,7 @@ const AdminDashboard = () => {
             <div className="flex flex-col gap-4 sm:gap-6">
               <div>
                 <div className="mb-2 sm:mb-4 flex items-center">
-                  <FaList className="w-4 h-4 sm:w-5 sm:h-5 text-[#2a6168] mr-2" />
+                  <FaList className="w-4 h-4 sm:w-5 sm:h-5 text-secondary mr-2" />
                   <h2 className="text-base sm:text-xl font-boldtext-primary font-['ClashDisplay']">QUICK ACTIONS</h2>
                 </div>
                 <div className="flex flex-col gap-2 sm:gap-3">
@@ -140,7 +140,7 @@ const AdminDashboard = () => {
               {/* Recent Activity Feed */}
               <div>
                 <div className="mb-2 sm:mb-4 flex items-center">
-                  <FaBolt className="w-4 h-4 sm:w-5 sm:h-5 text-[#2a6168] mr-2" />
+                  <FaBolt className="w-4 h-4 sm:w-5 sm:h-5 text-secondary mr-2" />
                   <h2 className="text-base sm:text-xl font-boldtext-primary font-['ClashDisplay']">RECENT ACTIVITY</h2>
                 </div>
                 <div className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-3 sm:p-4 flex flex-col gap-2 sm:gap-3 max-h-48 sm:max-h-64 overflow-y-auto">
