@@ -60,8 +60,8 @@ const DashboardNavbar = () => {
           }
           className="flex items-center gap-2 text-primary font-bold text-2xl tracking-tight hover:opacity-90"
         >
-          <span className="text-primary px-2 py-1 font-extrabold">Campus</span>
-          <span className="font-extrabold">Connect</span>
+          <span className="text-primary px-2 py-1 font-extrabold">Eventure</span>
+      
         </Link>
 
         {/* Desktop Nav Links */}
