@@ -4,33 +4,23 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    trim: true,
-    minlength: 2,
-    maxlength: 100
+    trim: true
   },
   email: {
     type: String,
     required: true,
     unique: true,
-    trim: true,
     lowercase: true,
-    match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address.']
+    trim: true
   },
-  phone: {
+  password: {
     type: String,
-    required: true,
-    match: [/^\d{10}$/, 'Please enter a valid 10-digit phone number.']
+    required: true
   },
   role: {
     type: String,
     enum: ['Student', 'Organizer', 'Admin'],
-    default: 'Student',
-    required: true
-  },
-  password: {
-    type: String,
-    required: true,
-    minlength: 6
+    default: 'Student'
   }
 }, { timestamps: true });
 
