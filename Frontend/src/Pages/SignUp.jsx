@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button } from "../components/ui/button";
 import { Listbox } from "@headlessui/react";
 import { FaChevronDown, FaCheck } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
 
 const roles = ["Student", "Organizer", "Admin"];
 
@@ -13,6 +15,8 @@ const SignUp = () => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [passwordStrength, setPasswordStrength] = useState(0);
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handlePasswordChange = (e) => {
     const value = e.target.value;
@@ -26,9 +30,11 @@ const SignUp = () => {
     setPasswordStrength(strength);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setError("");
+
     if (!name || !email || !role || !password) {
       setError("Please fill in all fields.");
       setIsLoading(false);
@@ -39,11 +45,23 @@ const SignUp = () => {
       setIsLoading(false);
       return;
     }
-    setError("");
-    setTimeout(() => {
-      setIsLoading(false);
-      alert("Account created successfully!");
-    }, 1500);
+
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password, role }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error || "Sign up failed.");
+      } else {
+        navigate("/dashboard");
+      }
+    } catch (err) {
+      setError("Server error. Please try again.");
+    }
+    setIsLoading(false);
   };
 
   const getPasswordStrengthColor = () => {
@@ -168,17 +186,28 @@ const SignUp = () => {
             </div>
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-primary mb-1 font-['Satoshi']">Password</label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="new-password"
-                required
-                value={password}
-                onChange={handlePasswordChange}
-                className="appearance-none rounded-xl block w-full px-4 py-3 border border-white/40 bg-white/60 placeholder-secondary/60 focus:outline-none focus:ring-2 focus:ring-primary-button focus:border-transparent text-sm transition-all duration-200 font-['Satoshi']"
-                placeholder="••••••••"
-              />
+              <div className="relative">
+                <input
+                  id="password"
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  autoComplete="new-password"
+                  required
+                  value={password}
+                  onChange={handlePasswordChange}
+                  className="appearance-none rounded-xl block w-full px-4 py-3 border border-white/40 bg-white/60 placeholder-secondary/60 focus:outline-none focus:ring-2 focus:ring-primary-button focus:border-transparent text-sm transition-all duration-200 font-['Satoshi'] pr-12"
+                  placeholder="••••••••"
+                />
+                <button
+                  type="button"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-secondary focus:outline-none"
+                  tabIndex={-1}
+                  onClick={() => setShowPassword((v) => !v)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                </button>
+              </div>
               {password && (
                 <div className="mt-2">
                   <div className="flex justify-between mb-1">

@@ -1,25 +1,43 @@
 import React, { useState } from "react";
 import { Button } from "../components/ui/button";
+import { useNavigate } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setError("");
+
     if (!email || !password) {
       setError("Please enter both email and password.");
       setIsLoading(false);
       return;
     }
-    setError("");
-    setTimeout(() => {
-      setIsLoading(false);
-      alert("Logged in successfully!");
-    }, 1500);
+
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error || "Login failed.");
+      } else {
+        navigate("/dashboard");
+      }
+    } catch (err) {
+      setError("Server error. Please try again.");
+    }
+    setIsLoading(false);
   };
 
   return (
@@ -74,17 +92,28 @@ const Login = () => {
                 <label htmlFor="password" className="block text-sm font-medium text-primary font-['Satoshi']">Password</label>
                 <a href="/forgot-password" className="text-xs text-secondary hover:underline font-['Satoshi']">Forgot?</a>
               </div>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="appearance-none rounded-xl block w-full px-4 py-3 border border-white/40 bg-white/60 placeholder-secondary/60 focus:outline-none focus:ring-2 focus:ring-primary-button focus:border-transparent text-sm transition-all duration-200 font-['Satoshi']"
-                placeholder="••••••••"
-              />
+              <div className="relative">
+                <input
+                  id="password"
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  autoComplete="current-password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="appearance-none rounded-xl block w-full px-4 py-3 border border-white/40 bg-white/60 placeholder-secondary/60 focus:outline-none focus:ring-2 focus:ring-primary-button focus:border-transparent text-sm transition-all duration-200 font-['Satoshi'] pr-12"
+                  placeholder="••••••••"
+                />
+                <button
+                  type="button"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-secondary focus:outline-none"
+                  tabIndex={-1}
+                  onClick={() => setShowPassword((v) => !v)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                </button>
+              </div>
             </div>
             <div className="flex items-center">
               <input

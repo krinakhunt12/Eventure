@@ -37,7 +37,7 @@ const About = () => (
       
       <div className="max-w-2xl sm:max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-10 sm:mb-14 md:mb-16">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#23424A] mb-3 sm:mb-4 font-['ClashDisplay']">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-boldtext-primary mb-3 sm:mb-4 font-['ClashDisplay']">
             ABOUT <span className="text-[#4A4A4A]">EVENTURE</span>
           </h1>
           <div className="w-16 sm:w-24 h-1 bg-[#2a6168] mx-auto mb-4 sm:mb-6"></div>
@@ -53,7 +53,7 @@ const About = () => (
               <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#2a6168] mb-3 sm:mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
               </svg>
-              <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2 text-[#23424A] font-['ClashDisplay']">OUR MISSION</h2>
+              <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2text-primary font-['ClashDisplay']">OUR MISSION</h2>
               <p className="text-[#4A4A4A]/90 text-center font-['Satoshi'] text-sm sm:text-base">
                 To connect students, organizers, and administrators, making campus life vibrant and accessible for all through technology and design.
               </p>
@@ -62,7 +62,7 @@ const About = () => (
               <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#2a6168] mb-3 sm:mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 1.343-3 3 0 1.657 1.343 3 3 3s3-1.343 3-3c0-1.657-1.343-3-3-3zm0 0V4m0 8v8" />
               </svg>
-              <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2 text-[#23424A] font-['ClashDisplay']">OUR VISION</h2>
+              <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2text-primary font-['ClashDisplay']">OUR VISION</h2>
               <p className="text-[#4A4A4A]/90 text-center font-['Satoshi'] text-sm sm:text-base">
                 To be the leading platform for campus engagement, fostering growth, creativity, and collaboration in every institution.
               </p>
@@ -72,7 +72,7 @@ const About = () => (
 
         {/* Team Section */}
         <div className="w-full max-w-xl sm:max-w-2xl md:max-w-5xl mb-10 sm:mb-14 md:mb-16 mx-auto">
-          <h3 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6 text-[#23424A] text-center font-['ClashDisplay']">
+          <h3 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6text-primary text-center font-['ClashDisplay']">
             MEET <span className="text-[#4A4A4A]">THE TEAM</span>
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
@@ -86,7 +86,7 @@ const About = () => (
                   alt={member.name} 
                   className="w-16 h-16 sm:w-20 sm:h-20 rounded-full mb-3 sm:mb-4 object-cover border-2 sm:border-4 border-white/50 hover:border-[#2a6168]/50 transition-colors" 
                 />
-                <h4 className="font-semibold text-base sm:text-lg text-[#23424A] mb-0.5 sm:mb-1 font-['ClashDisplay']">{member.name}</h4>
+                <h4 className="font-semibold text-base sm:text-lgtext-primary mb-0.5 sm:mb-1 font-['ClashDisplay']">{member.name}</h4>
                 <p className="text-[#4A4A4A]/80 text-xs sm:text-sm font-['Satoshi']">{member.role}</p>
               </div>
             ))}
@@ -95,7 +95,7 @@ const About = () => (
 
         {/* Contact Section */}
         <div className="w-full max-w-md sm:max-w-2xl md:max-w-3xl mb-10 sm:mb-14 md:mb-16 mx-auto">
-          <h3 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6 text-[#23424A] text-center font-['ClashDisplay']">
+          <h3 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6text-primary text-center font-['ClashDisplay']">
             CONTACT <span className="text-[#4A4A4A]">US</span>
           </h3>
           <div className="bg-white/30 backdrop-blur-md rounded-2xl p-5 sm:p-8 border border-white/40 text-center hover:shadow-lg transition-all">
@@ -104,7 +104,7 @@ const About = () => (
             </p>
             <a 
               href="mailto:hello@Eventure.com" 
-              className="text-[#2a6168] font-semibold hover:underline font-['Satoshi'] text-sm sm:text-base"
+              className="text-secondary font-semibold hover:underline font-['Satoshi'] text-sm sm:text-base"
             >
               hello@Eventure.com
             </a>
