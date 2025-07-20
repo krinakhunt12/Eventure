@@ -56,7 +56,13 @@ const SignUp = () => {
       if (!res.ok) {
         setError(data.error || "Sign up failed.");
       } else {
-        navigate("/dashboard");
+        if (role === "Student") {
+          navigate("/dashboard");
+        } else if (role === "Organizer") {
+          navigate("/organizer");
+        } else if (role === "Admin") {
+          navigate("/admin");
+        }
       }
     } catch (err) {
       setError("Server error. Please try again.");
@@ -104,8 +110,8 @@ const SignUp = () => {
         </div>
       </div>
       {/* Sign Up Form */}
-      <div className="flex flex-1 min-h-screen items-center justify-center w-full md:w-1/2 lg:w-1/3 px-2 sm:px-4 py-6 md:py-0 relative z-10 bg-transparent">
-        <div className="w-full max-w-md bg-white/30 backdrop-blur-lg rounded-3xl border border-white/40 shadow-2xl p-4 md:p-5 space-y-4 mx-auto">
+      <div className="flex flex-1 min-h-screen items-center justify-center w-full md:w-1/2 lg:w-1/3 px-2 sm:px-4 py-4 md:py-0 relative z-10 bg-transparent">
+        <div className="w-full max-w-md bg-white/30 backdrop-blur-lg rounded-3xl border border-white/40 shadow-2xl p-4 md:p-5 space-y-2 mx-auto">
           <div className="text-center">
             <div className="mx-auto h-16 w-16 bg-primary-button rounded-full flex items-center justify-center mb-2 shadow-md">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">

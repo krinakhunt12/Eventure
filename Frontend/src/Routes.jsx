@@ -12,6 +12,7 @@ import Pricing from "./Pages/Pricing";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import AdminDashboard from "./Pages/AdminDashboard";
+import CreateEvent from "./Pages/CreateEvent";
 
 const AppRoutes = () => (
   <Routes>
@@ -27,6 +28,7 @@ const AppRoutes = () => (
     <Route path="/about" element={<About />} />
     <Route path="/contact" element={<Contact />} />
     <Route path="/admin" element={<AdminDashboard />} />
+    <Route path="/create-event" element={<CreateEvent />} />
   </Routes>
 );
 

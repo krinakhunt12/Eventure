@@ -37,10 +37,10 @@ const About = () => (
       
       <div className="max-w-2xl sm:max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-10 sm:mb-14 md:mb-16">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-boldtext-primary mb-3 sm:mb-4 font-['ClashDisplay']">
-            ABOUT <span className="text-[#4A4A4A]">EVENTURE</span>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 sm:mb-4 font-['ClashDisplay']">
+            ABOUT <span className="text-secondary">EVENTURE</span>
           </h1>
-          <div className="w-16 sm:w-24 h-1 bg-[#2a6168] mx-auto mb-4 sm:mb-6"></div>
+          <div className="w-16 sm:w-24 h-1 bg-primary mx-auto mb-4 sm:mb-6"></div>
           <p className="text-base sm:text-lg md:text-xl text-[#4A4A4A] max-w-md sm:max-w-xl md:max-w-2xl mx-auto font-['Satoshi']">
             Empowering campus communities through seamless event discovery, management, and participation.
           </p>
