@@ -8,10 +8,10 @@ const ADMIN = { name: "Admin" };
 const TODAY = new Date().toLocaleDateString(undefined, { dateStyle: "full" });
 
 const SUMMARY = [
-  { label: "Total Events", value: 28, icon: <FaCalendarAlt className="w-6 h-6 sm:w-7 sm:h-7 text-[#2a6168]" /> },
-  { label: "Pending Approvals", value: 4, icon: <FaHourglassHalf className="w-6 h-6 sm:w-7 sm:h-7 text-[#2a6168]" /> },
-  { label: "Registered Students", value: 1200, icon: <FaUserGraduate className="w-6 h-6 sm:w-7 sm:h-7 text-[#2a6168]" /> },
-  { label: "Active Organizers", value: 18, icon: <FaUserTie className="w-6 h-6 sm:w-7 sm:h-7 text-[#2a6168]" /> },
+  { label: "Total Events", value: 28, icon: <FaCalendarAlt className="w-6 h-6 sm:w-7 sm:h-7 text-secondary" /> },
+  { label: "Pending Approvals", value: 4, icon: <FaHourglassHalf className="w-6 h-6 sm:w-7 sm:h-7 text-secondary" /> },
+  { label: "Registered Students", value: 1200, icon: <FaUserGraduate className="w-6 h-6 sm:w-7 sm:h-7 text-secondary" /> },
+  { label: "Active Organizers", value: 18, icon: <FaUserTie className="w-6 h-6 sm:w-7 sm:h-7 text-secondary" /> },
 ];
 
 const PENDING_EVENTS = [
@@ -22,10 +22,10 @@ const PENDING_EVENTS = [
 ];
 
 const ACTIVITY_FEED = [
-  { id: 1, message: "Riya submitted AI Workshop for approval", time: "2 hours ago", icon: <FaHourglassHalf className="text-[#2a6168] w-4 h-4" /> },
-  { id: 2, message: "Aman registered 30 students for TechFest", time: "5 hours ago", icon: <FaUserCheck className="text-[#2a6168] w-4 h-4" /> },
-  { id: 3, message: "Priya updated event details for Sports Meet", time: "Yesterday", icon: <FaBolt className="text-[#2a6168] w-4 h-4" /> },
-  { id: 4, message: "Rahul submitted feedback for Cultural Night", time: "2 days ago", icon: <FaComments className="text-[#2a6168] w-4 h-4" /> },
+  { id: 1, message: "Riya submitted AI Workshop for approval", time: "2 hours ago", icon: <FaHourglassHalf className="text-secondary w-4 h-4" /> },
+  { id: 2, message: "Aman registered 30 students for TechFest", time: "5 hours ago", icon: <FaUserCheck className="text-secondary w-4 h-4" /> },
+  { id: 3, message: "Priya updated event details for Sports Meet", time: "Yesterday", icon: <FaBolt className="text-secondary w-4 h-4" /> },
+  { id: 4, message: "Rahul submitted feedback for Cultural Night", time: "2 days ago", icon: <FaComments className="text-secondary w-4 h-4" /> },
 ];
 
 const ADMIN_ACTIONS = [
@@ -39,7 +39,7 @@ const AdminDashboard = () => {
   return (
     <>
       <DashboardNavbar />
-      <div className="min-h-screen bg-gradient-to-br from-[#e3f2fd] to-[#bbdefb] py-6 sm:py-10 px-2 sm:px-4 md:px-6 relative overflow-hidden">
+      <div className="min-h-screen bg-primary py-6 sm:py-10 px-2 sm:px-4 md:px-6 relative overflow-hidden">
         {/* Geometric background elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute top-[10%] left-[10%] w-40 h-40 sm:w-64 sm:h-64 bg-white/20 rounded-full blur-xl"></div>
@@ -102,7 +102,7 @@ const AdminDashboard = () => {
                         <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-secondary/80 font-['Satoshi']">{event.date}</td>
                         <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-secondary/80 font-['Satoshi']">{event.venue}</td>
                         <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 flex gap-1 sm:gap-2">
-                          <button className="flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-[#2a6168] text-white rounded-lg hover:bg-[#23424A] transition-colors text-xs font-semibold font-['Satoshi']">
+                          <button className="flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-primary-button text-white rounded-lg hover:bg-[#23424A] transition-colors text-xs font-semibold font-['Satoshi']">
                             <FaCheck className="mr-1" /> Approve
                           </button>
                           <button className="flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors text-xs font-semibold font-['Satoshi']">

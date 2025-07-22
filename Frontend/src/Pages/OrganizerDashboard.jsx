@@ -52,7 +52,7 @@ const CHART_DATA = [
 ];
 
 const STATUS_COLORS = {
-  Approved: "bg-[#B6E2D3] text-secondary",
+  Approved: "bg-secondary text-secondary",
   Pending: "bg-yellow-100 text-yellow-700",
   Completed: "bg-[#E0E7EA] text-secondary",
 };
@@ -215,7 +215,7 @@ const OrganizerDashboard = () => {
                         key={note.id} 
                         className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/30 transition font-['Satoshi']"
                       >
-                        <div className="p-2 rounded-full bg-[#B6E2D3] text-secondary">
+                        <div className="p-2 rounded-full bg-secondary text-secondary">
                           <FaBell className="w-3 h-3" />
                         </div>
                         <div>

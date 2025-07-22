@@ -114,7 +114,7 @@ const StudentDashboard = () => {
                         <div className="text-sm text-gray-600 mb-1">
                           <span className="font-semibold">Venue:</span> {event.venue}
                         </div>
-                        <div className="text-xs mt-2 px-3 py-1 rounded-full bg-[#B6E2D3] text-secondary w-max font-medium">{event.status}</div>
+                        <div className="text-xs mt-2 px-3 py-1 rounded-full bg-secondary text-secondary w-max font-medium">{event.status}</div>
                       </div>
                     </div>
                   ))
@@ -133,7 +133,7 @@ const StudentDashboard = () => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="flex items-center px-4 py-2 bg-white border border-[#E0E7EA] rounded-xl shadow-sm text-secondary font-medium hover:bg-[#B6E2D3] transition-colors"
+                    className="flex items-center px-4 py-2 bg-white border border-[#E0E7EA] rounded-xl shadow-sm text-secondary font-medium hover:bg-secondary transition-colors"
                   >
                     {link.icon}
                     {link.label}
@@ -152,7 +152,7 @@ const StudentDashboard = () => {
                 ) : (
                   NOTIFICATIONS.map((note) => (
                     <div key={note.id} className="flex items-start gap-3">
-                      <Bell className="w-4 h-4 text-[#7FC8A9] mt-1" />
+                      <Bell className="w-4 h-4 text-primary mt-1" />
                       <div>
                         <div className="text-sm text-primary font-medium">{note.message}</div>
                         <div className="text-xs text-gray-400">{note.time}</div>

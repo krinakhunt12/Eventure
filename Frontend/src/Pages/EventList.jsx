@@ -173,7 +173,7 @@ const EVENTS = [
 ];
 
 const CATEGORY_COLORS = {
-  Technical: "bg-[#B6E2D3] text-secondary",
+  Technical: "bg-secondary text-secondary",
   Cultural: "bg-pink-100 text-pink-700",
   Sports: "bg-green-100 text-green-700",
 };

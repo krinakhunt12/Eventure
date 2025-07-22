@@ -22,16 +22,16 @@ const Footer = () => {
             </p>
             
             <div className="flex space-x-4">
-              <a href="#" className="text-secondary hover:text-[#7FC8A9] transition-colors">
+              <a href="#" className="text-secondary hover:text-primary transition-colors">
                 <FaTwitter size={20} />
               </a>
-              <a href="#" className="text-secondary hover:text-[#7FC8A9] transition-colors">
+              <a href="#" className="text-secondary hover:text-primary transition-colors">
                 <FaLinkedin size={20} />
               </a>
-              <a href="#" className="text-secondary hover:text-[#7FC8A9] transition-colors">
+              <a href="#" className="text-secondary hover:text-primary transition-colors">
                 <FaInstagram size={20} />
               </a>
-              <a href="#" className="text-secondary hover:text-[#7FC8A9] transition-colors">
+              <a href="#" className="text-secondary hover:text-primary transition-colors">
                 <FaFacebook size={20} />
               </a>
             </div>
@@ -41,10 +41,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold text-primary mb-6 font-poppins">Quick Links</h3>
             <div className="space-y-3">
-              <a href="#" className="block text-secondary hover:text-[#7FC8A9] transition-colors">Home</a>
-              <a href="#" className="block text-secondary hover:text-[#7FC8A9] transition-colors">Features</a>
-              <a href="#" className="block text-secondary hover:text-[#7FC8A9] transition-colors">Pricing</a>
-              <a href="#" className="block text-secondary hover:text-[#7FC8A9] transition-colors">Testimonials</a>
+              <a href="#" className="block text-secondary hover:text-primary transition-colors">Home</a>
+              <a href="#" className="block text-secondary hover:text-primary transition-colors">Features</a>
+              <a href="#" className="block text-secondary hover:text-primary transition-colors">Pricing</a>
+              <a href="#" className="block text-secondary hover:text-primary transition-colors">Testimonials</a>
             </div>
           </div>
 
@@ -52,10 +52,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold text-primary mb-6 font-poppins">Resources</h3>
             <div className="space-y-3">
-              <a href="#" className="block text-secondary hover:text-[#7FC8A9] transition-colors">Blog</a>
-              <a href="#" className="block text-secondary hover:text-[#7FC8A9] transition-colors">Documentation</a>
-              <a href="#" className="block text-secondary hover:text-[#7FC8A9] transition-colors">Help Center</a>
-              <a href="#" className="block text-secondary hover:text-[#7FC8A9] transition-colors">API Status</a>
+              <a href="#" className="block text-secondary hover:text-primary transition-colors">Blog</a>
+              <a href="#" className="block text-secondary hover:text-primary transition-colors">Documentation</a>
+              <a href="#" className="block text-secondary hover:text-primary transition-colors">Help Center</a>
+              <a href="#" className="block text-secondary hover:text-primary transition-colors">API Status</a>
             </div>
           </div>
 
@@ -63,10 +63,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold text-primary mb-6 font-poppins">Company</h3>
             <div className="space-y-3">
-              <a href="#" className="block text-secondary hover:text-[#7FC8A9] transition-colors">About Us</a>
-              <a href="#" className="block text-secondary hover:text-[#7FC8A9] transition-colors">Careers</a>
-              <a href="#" className="block text-secondary hover:text-[#7FC8A9] transition-colors">Privacy Policy</a>
-              <a href="#" className="block text-secondary hover:text-[#7FC8A9] transition-colors">Terms of Service</a>
+              <a href="#" className="block text-secondary hover:text-primary transition-colors">About Us</a>
+              <a href="#" className="block text-secondary hover:text-primary transition-colors">Careers</a>
+              <a href="#" className="block text-secondary hover:text-primary transition-colors">Privacy Policy</a>
+              <a href="#" className="block text-secondary hover:text-primary transition-colors">Terms of Service</a>
             </div>
           </div>
 
@@ -75,15 +75,15 @@ const Footer = () => {
             <h3 className="text-lg font-bold text-primary mb-6 font-poppins">Contact Us</h3>
             <div className="space-y-4">
               <div className="flex items-start">
-                <Mail className="w-5 h-5 mt-1 mr-3 text-[#7FC8A9]" />
+                <Mail className="w-5 h-5 mt-1 mr-3 text-primary" />
                 <span className="text-secondary">contact@Eventure.edu</span>
               </div>
               <div className="flex items-start">
-                <Phone className="w-5 h-5 mt-1 mr-3 text-[#7FC8A9]" />
+                <Phone className="w-5 h-5 mt-1 mr-3 text-primary" />
                 <span className="text-secondary">+1 (555) 123-4567</span>
               </div>
               <div className="flex items-start">
-                <MapPin className="w-5 h-5 mt-1 mr-3 text-[#7FC8A9]" />
+                <MapPin className="w-5 h-5 mt-1 mr-3 text-primary" />
                 <span className="text-secondary">123 Campus Drive, Edu City</span>
               </div>
             </div>
@@ -96,9 +96,9 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Eventure. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-secondary hover:text-[#7FC8A9] transition-colors text-sm">Privacy Policy</a>
-            <a href="#" className="text-secondary hover:text-[#7FC8A9] transition-colors text-sm">Terms of Service</a>
-            <a href="#" className="text-secondary hover:text-[#7FC8A9] transition-colors text-sm">Cookie Policy</a>
+            <a href="#" className="text-secondary hover:text-primary transition-colors text-sm">Privacy Policy</a>
+            <a href="#" className="text-secondary hover:text-primary transition-colors text-sm">Terms of Service</a>
+            <a href="#" className="text-secondary hover:text-primary transition-colors text-sm">Cookie Policy</a>
           </div>
         </div>
       </div>
