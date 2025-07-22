@@ -50,11 +50,11 @@ const AdminDashboard = () => {
           {/* Welcome Section */}
           <div className="mb-6 sm:mb-10 flex flex-col md:flex-row md:items-center md:justify-between gap-2 sm:gap-4">
             <div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#23424A] mb-1 font-['ClashDisplay']">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1 font-['ClashDisplay']">
                 WELCOME, <span className="text-[#2a6168]">{ADMIN.name}</span>
               </h1>
-              <div className="text-[#4A4A4A]/80 font-medium mb-1 font-['Satoshi'] text-sm sm:text-base">{TODAY}</div>
-              <div className="text-[#4A4A4A]/70 font-['Satoshi'] text-xs sm:text-sm">Manage events, organizers, and students efficiently from your dashboard.</div>
+              <div className="text-secondary/80 font-medium mb-1 font-['Satoshi'] text-sm sm:text-base">{TODAY}</div>
+              <div className="text-secondary/70 font-['Satoshi'] text-xs sm:text-sm">Manage events, organizers, and students efficiently from your dashboard.</div>
             </div>
           </div>
 
@@ -67,7 +67,7 @@ const AdminDashboard = () => {
               >
                 <div className="mb-2 sm:mb-3 group-hover:scale-110 transition-transform">{item.icon}</div>
                 <div className="text-2xl sm:text-3xl font-extrabold text-[#2a6168] mb-0.5 sm:mb-1">{item.value}</div>
-                <div className="text-xs sm:text-base text-[#23424A] font-medium text-center font-['Satoshi']">{item.label}</div>
+                <div className="text-xs sm:text-base text-primary font-medium text-center font-['Satoshi']">{item.label}</div>
               </div>
             ))}
           </div>
@@ -80,27 +80,27 @@ const AdminDashboard = () => {
             {/* Event Approval Table */}
             <div className="md:col-span-2">
               <div className="mb-3 sm:mb-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-                <h2 className="text-lg sm:text-2xl font-bold text-[#23424A] font-['ClashDisplay']">EVENT APPROVALS</h2>
+                <h2 className="text-lg sm:text-2xl font-bold text-primary font-['ClashDisplay']">EVENT APPROVALS</h2>
                 <a href="/events" className="text-xs sm:text-sm text-[#2a6168] hover:underline font-medium font-['Satoshi']">View All</a>
               </div>
               <div className="overflow-x-auto rounded-2xl shadow-lg border border-white/40 bg-white/30 backdrop-blur-md">
                 <table className="min-w-full divide-y divide-white/40 text-xs sm:text-sm">
                   <thead>
                     <tr className="bg-white/30 backdrop-blur-md">
-                      <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-left font-bold text-[#23424A] uppercase tracking-wider font-['Satoshi']">Event Title</th>
-                      <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-left font-bold text-[#23424A] uppercase tracking-wider font-['Satoshi']">Organizer</th>
-                      <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-left font-bold text-[#23424A] uppercase tracking-wider font-['Satoshi']">Date</th>
-                      <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-left font-bold text-[#23424A] uppercase tracking-wider font-['Satoshi']">Venue</th>
-                      <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-left font-bold text-[#23424A] uppercase tracking-wider font-['Satoshi']">Actions</th>
+                      <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-left font-bold text-primary uppercase tracking-wider font-['Satoshi']">Event Title</th>
+                      <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-left font-bold text-primary uppercase tracking-wider font-['Satoshi']">Organizer</th>
+                      <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-left font-bold text-primary uppercase tracking-wider font-['Satoshi']">Date</th>
+                      <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-left font-bold text-primary uppercase tracking-wider font-['Satoshi']">Venue</th>
+                      <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-left font-bold text-primary uppercase tracking-wider font-['Satoshi']">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
                     {PENDING_EVENTS.map((event) => (
                       <tr key={event.id} className="hover:bg-[#2a6168]/10 transition-colors">
-                        <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 font-medium text-[#23424A] font-['Satoshi']">{event.title}</td>
-                        <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-[#4A4A4A]/80 font-['Satoshi']">{event.organizer}</td>
-                        <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-[#4A4A4A]/80 font-['Satoshi']">{event.date}</td>
-                        <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-[#4A4A4A]/80 font-['Satoshi']">{event.venue}</td>
+                        <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 font-medium text-primary font-['Satoshi']">{event.title}</td>
+                        <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-secondary/80 font-['Satoshi']">{event.organizer}</td>
+                        <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-secondary/80 font-['Satoshi']">{event.date}</td>
+                        <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-secondary/80 font-['Satoshi']">{event.venue}</td>
                         <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 flex gap-1 sm:gap-2">
                           <button className="flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-[#2a6168] text-white rounded-lg hover:bg-[#23424A] transition-colors text-xs font-semibold font-['Satoshi']">
                             <FaCheck className="mr-1" /> Approve
@@ -121,14 +121,14 @@ const AdminDashboard = () => {
               <div>
                 <div className="mb-2 sm:mb-4 flex items-center">
                   <FaList className="w-4 h-4 sm:w-5 sm:h-5 text-[#2a6168] mr-2" />
-                  <h2 className="text-base sm:text-xl font-bold text-[#23424A] font-['ClashDisplay']">QUICK ACTIONS</h2>
+                  <h2 className="text-base sm:text-xl font-bold text-primary font-['ClashDisplay']">QUICK ACTIONS</h2>
                 </div>
                 <div className="flex flex-col gap-2 sm:gap-3">
                   {ADMIN_ACTIONS.map((action) => (
                     <a
                       key={action.label}
                       href={action.href}
-                      className="flex items-center px-3 sm:px-4 py-2 sm:py-3 bg-white/30 backdrop-blur-md border border-white/40 rounded-xl text-[#23424A] font-medium hover:bg-[#2a6168]/10 transition-colors font-['Satoshi'] text-xs sm:text-base"
+                      className="flex items-center px-3 sm:px-4 py-2 sm:py-3 bg-white/30 backdrop-blur-md border border-white/40 rounded-xl text-primary font-medium hover:bg-[#2a6168]/10 transition-colors font-['Satoshi'] text-xs sm:text-base"
                     >
                       {action.icon}
                       {action.label}
@@ -141,18 +141,18 @@ const AdminDashboard = () => {
               <div>
                 <div className="mb-2 sm:mb-4 flex items-center">
                   <FaBolt className="w-4 h-4 sm:w-5 sm:h-5 text-[#2a6168] mr-2" />
-                  <h2 className="text-base sm:text-xl font-bold text-[#23424A] font-['ClashDisplay']">RECENT ACTIVITY</h2>
+                  <h2 className="text-base sm:text-xl font-bold text-primary font-['ClashDisplay']">RECENT ACTIVITY</h2>
                 </div>
                 <div className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-3 sm:p-4 flex flex-col gap-2 sm:gap-3 max-h-48 sm:max-h-64 overflow-y-auto">
                   {ACTIVITY_FEED.length === 0 ? (
-                    <div className="text-[#4A4A4A]/70 text-center py-4 sm:py-6 font-['Satoshi'] text-xs sm:text-base">No recent activity.</div>
+                    <div className="text-secondary/70 text-center py-4 sm:py-6 font-['Satoshi'] text-xs sm:text-base">No recent activity.</div>
                   ) : (
                     ACTIVITY_FEED.map((item) => (
                       <div key={item.id} className="flex items-start gap-2 sm:gap-3 p-1 sm:p-2 rounded-lg hover:bg-white/40 transition">
                         {item.icon}
                         <div>
-                          <div className="text-xs sm:text-sm text-[#23424A] font-medium font-['Satoshi']">{item.message}</div>
-                          <div className="text-[10px] sm:text-xs text-[#4A4A4A]/60 font-['Satoshi']">{item.time}</div>
+                          <div className="text-xs sm:text-sm text-primary font-medium font-['Satoshi']">{item.message}</div>
+                          <div className="text-[10px] sm:text-xs text-secondary/60 font-['Satoshi']">{item.time}</div>
                         </div>
                       </div>
                     ))
