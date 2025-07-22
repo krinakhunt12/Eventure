@@ -96,7 +96,7 @@ const AdminDashboard = () => {
                   </thead>
                   <tbody>
                     {PENDING_EVENTS.map((event) => (
-                      <tr key={event.id} className="hover:bg-[#2a6168]/10 transition-colors">
+                      <tr key={event.id} className="hover:bg-secondary/10 transition-colors">
                         <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 font-medium text-primary font-['Satoshi']">{event.title}</td>
                         <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-secondary/80 font-['Satoshi']">{event.organizer}</td>
                         <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 text-secondary/80 font-['Satoshi']">{event.date}</td>
@@ -128,7 +128,7 @@ const AdminDashboard = () => {
                     <a
                       key={action.label}
                       href={action.href}
-                      className="flex items-center px-3 sm:px-4 py-2 sm:py-3 bg-white/30 backdrop-blur-md border border-white/40 rounded-xl text-primary font-medium hover:bg-[#2a6168]/10 transition-colors font-['Satoshi'] text-xs sm:text-base"
+                      className="flex items-center px-3 sm:px-4 py-2 sm:py-3 bg-white/30 backdrop-blur-md border border-white/40 rounded-xl text-primary font-medium hover:bg-secondary/10 transition-colors font-['Satoshi'] text-xs sm:text-base"
                     >
                       {action.icon}
                       {action.label}

@@ -40,7 +40,7 @@ const About = () => (
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 sm:mb-4 font-['ClashDisplay'] uppercase">
             About <span className="text-secondary">Eventure</span>
           </h1>
-          <div className="w-16 sm:w-24 h-1 bg-[#2a6168] mx-auto mb-4 sm:mb-6"></div>
+          <div className="w-16 sm:w-24 h-1 bg-secondary mx-auto mb-4 sm:mb-6"></div>
           <p className="text-base sm:text-lg md:text-xl text-secondary max-w-md sm:max-w-xl md:max-w-2xl mx-auto font-['Satoshi']">
             Empowering campus communities through seamless event discovery, management, and participation.
           </p>
@@ -84,7 +84,7 @@ const About = () => (
                 <img 
                   src={member.img} 
                   alt={member.name} 
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full mb-3 sm:mb-4 object-cover border-2 sm:border-4 border-white/50 hover:border-[#2a6168]/50 transition-colors" 
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full mb-3 sm:mb-4 object-cover border-2 sm:border-4 border-white/50 hover:border-secondary/50 transition-colors" 
                 />
                 <h4 className="font-semibold text-base sm:text-lg text-primary mb-0.5 sm:mb-1 font-['ClashDisplay']">{member.name}</h4>
                 <p className="text-secondary/80 text-xs sm:text-sm font-['Satoshi']">{member.role}</p>
