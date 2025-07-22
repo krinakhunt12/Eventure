@@ -51,7 +51,7 @@ const AdminDashboard = () => {
           <div className="mb-6 sm:mb-10 flex flex-col md:flex-row md:items-center md:justify-between gap-2 sm:gap-4">
             <div>
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1 font-['ClashDisplay']">
-                WELCOME, <span className="text-[#2a6168]">{ADMIN.name}</span>
+                WELCOME, <span className="text-secondary">{ADMIN.name}</span>
               </h1>
               <div className="text-secondary/80 font-medium mb-1 font-['Satoshi'] text-sm sm:text-base">{TODAY}</div>
               <div className="text-secondary/70 font-['Satoshi'] text-xs sm:text-sm">Manage events, organizers, and students efficiently from your dashboard.</div>
@@ -66,7 +66,7 @@ const AdminDashboard = () => {
                 className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 flex flex-col items-center p-5 sm:p-7 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group"
               >
                 <div className="mb-2 sm:mb-3 group-hover:scale-110 transition-transform">{item.icon}</div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-[#2a6168] mb-0.5 sm:mb-1">{item.value}</div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-secondary mb-0.5 sm:mb-1">{item.value}</div>
                 <div className="text-xs sm:text-base text-primary font-medium text-center font-['Satoshi']">{item.label}</div>
               </div>
             ))}
@@ -81,7 +81,7 @@ const AdminDashboard = () => {
             <div className="md:col-span-2">
               <div className="mb-3 sm:mb-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
                 <h2 className="text-lg sm:text-2xl font-bold text-primary font-['ClashDisplay']">EVENT APPROVALS</h2>
-                <a href="/events" className="text-xs sm:text-sm text-[#2a6168] hover:underline font-medium font-['Satoshi']">View All</a>
+                <a href="/events" className="text-xs sm:text-sm text-secondary hover:underline font-medium font-['Satoshi']">View All</a>
               </div>
               <div className="overflow-x-auto rounded-2xl shadow-lg border border-white/40 bg-white/30 backdrop-blur-md">
                 <table className="min-w-full divide-y divide-white/40 text-xs sm:text-sm">
@@ -120,7 +120,7 @@ const AdminDashboard = () => {
             <div className="flex flex-col gap-4 sm:gap-6">
               <div>
                 <div className="mb-2 sm:mb-4 flex items-center">
-                  <FaList className="w-4 h-4 sm:w-5 sm:h-5 text-[#2a6168] mr-2" />
+                  <FaList className="w-4 h-4 sm:w-5 sm:h-5 text-secondary mr-2" />
                   <h2 className="text-base sm:text-xl font-bold text-primary font-['ClashDisplay']">QUICK ACTIONS</h2>
                 </div>
                 <div className="flex flex-col gap-2 sm:gap-3">
@@ -140,7 +140,7 @@ const AdminDashboard = () => {
               {/* Recent Activity Feed */}
               <div>
                 <div className="mb-2 sm:mb-4 flex items-center">
-                  <FaBolt className="w-4 h-4 sm:w-5 sm:h-5 text-[#2a6168] mr-2" />
+                  <FaBolt className="w-4 h-4 sm:w-5 sm:h-5 text-secondary mr-2" />
                   <h2 className="text-base sm:text-xl font-bold text-primary font-['ClashDisplay']">RECENT ACTIVITY</h2>
                 </div>
                 <div className="bg-white/30 backdrop-blur-md rounded-2xl border border-white/40 p-3 sm:p-4 flex flex-col gap-2 sm:gap-3 max-h-48 sm:max-h-64 overflow-y-auto">

@@ -110,7 +110,6 @@ const About = () => (
             </a>
           </div>
         </div>
-
         <div className="text-center text-secondary/80 mt-6 sm:mt-8 font-['Satoshi'] text-xs sm:text-sm">
           Built with love by a passionate team of developers and designers.
         </div>
