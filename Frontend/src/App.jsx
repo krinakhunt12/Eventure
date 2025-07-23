@@ -7,6 +7,8 @@ import "./index.css"
 import AppRoutes from "./Routes";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -23,6 +25,8 @@ function App() {
     <Router>
       <ScrollToTop />
       <AppRoutes />
+     
+<ToastContainer position="top-center" autoClose={3000} />
     </Router>
   )
 }
