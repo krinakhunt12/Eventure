@@ -10,6 +10,7 @@ import {
   FaCommentDots,
   FaCheckCircle,
   FaBell,
+  FaChevronRight,
 } from "react-icons/fa";
 import DashboardNavbar from "../components/DashboardNavbar";
 import Footer from "../components/Footer";
@@ -58,140 +59,200 @@ const OrganizerDashboard = () => {
       <DashboardNavbar />
       <div className="min-h-screen bg-primary py-8 px-4 font-['Satoshi']">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-10">
+          {/* Header Section */}
+          <div className="mb-12">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-              <h1 className="text-3xl font-bold text-primary font-['ClashDisplay']">
-                WELCOME, <span className="text-secondary">Organizer</span>!
-              </h1>
-              <p className="text-secondary font-['Satoshi']">{TODAY}</p>
+              <div>
+                <h1 className="text-3xl md:text-4xl font-bold text-primary font-['ClashDisplay']">
+                  WELCOME, <span className="text-secondary">Organizer</span>!
+                </h1>
+                <p className="text-sm text-secondary/80 mt-1">Here's what's happening with your events</p>
+              </div>
+              <p className="text-secondary font-['Satoshi'] mt-2 md:mt-0">{TODAY}</p>
             </div>
             <div className="w-20 h-1 bg-primary-button mt-4 rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+          {/* Stats Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
               { label: "Events Organized", value: summary.organized, icon: <FaCalendarAlt /> },
               { label: "Pending Approval", value: summary.pending, icon: <FaHourglassHalf /> },
               { label: "Total Participants", value: summary.participants, icon: <FaUsers /> },
               { label: "Upcoming Events", value: summary.upcoming, icon: <FaRegCalendarCheck /> },
             ].map((item) => (
-              <div key={item.label} className="bg-white/30 backdrop-blur-md rounded-2xl border p-6 hover:shadow-lg">
+              <div 
+                key={item.label} 
+                className="bg-white/30 backdrop-blur-md rounded-xl border border-white/20 p-6 transition-all duration-300 hover:shadow-md hover:translate-y-[-4px]"
+              >
                 <div className="flex items-center">
-                  <div className="p-3 bg-white/50 rounded-xl mr-4 text-primary">
+                  <div className="p-3 bg-white/50 rounded-lg mr-4 text-primary shadow-sm">
                     {item.icon}
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-secondary font-['ClashDisplay']">
                       {item.value}
                     </h3>
-                    <p className="text-sm text-primary font-['Satoshi'] mt-1">{item.label}</p>
+                    <p className="text-sm text-primary/80 font-['Satoshi'] mt-1">{item.label}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-6">
+          {/* Main Content */}
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Events Table Section */}
             <div className="lg:col-span-2">
-              <div className="flex justify-between items-center mb-6">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
                 <div>
-                  <h2 className="text-xl font-bold text-primary font-['ClashDisplay']">MY EVENTS</h2>
-                  <p className="text-sm text-secondary/80">Manage your events</p>
+                  <h2 className="text-xl md:text-2xl font-bold text-primary font-['ClashDisplay']">MY EVENTS</h2>
+                  <p className="text-sm text-secondary/80">Manage your events and registrations</p>
                 </div>
                 <a
                   href="/create-event"
-                  className="flex items-center px-4 py-2 bg-primary-button text-white rounded-xl hover:bg-[#23424A]"
+                  className="flex items-center px-4 py-2.5 bg-primary-button text-white rounded-lg hover:bg-[#23424A] transition-colors duration-300 shadow-sm"
                 >
                   <FaPlus className="w-4 h-4 mr-2" /> Create New
                 </a>
               </div>
-              <div className="bg-white/30 backdrop-blur-md rounded-2xl border overflow-hidden">
-                <table className="min-w-full divide-y divide-white/40">
-                  <thead className="bg-white/50">
-                    <tr>
-                      {["Title", "Date", "Venue", "Status", "Actions"].map((h) => (
-                        <th
-                          key={h}
-                          className="px-6 py-3 text-left text-xs font-semibold text-primary uppercase"
-                        >
-                          {h}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-white/40">
-                    {Array.isArray(events) && events.map((evt) => {
-                      const status = evt.isApproved
-                        ? new Date(evt.date) < new Date()
-                          ? "completed"
-                          : "approved"
-                        : "pending";
-                      return (
-                        <tr key={evt._id} className="hover:bg-white/30">
-                          <td className="px-6 py-4 font-medium text-primary">{evt.title}</td>
-                          <td className="px-6 py-4 text-secondary/80">{evt.date}</td>
-                          <td className="px-6 py-4 text-secondary/80">{evt.venue}</td>
-                          <td className="px-6 py-4">
-                            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${STATUS_COLORS[status]}`}>
-                              {status.charAt(0).toUpperCase() + status.slice(1)}
-                            </span>
-                          </td>
-                          <td className="px-6 py-4 text-right text-sm">
-                            <a href={`/events/${evt._id}`} className="text-secondary hover:underline mr-4">
-                              View
-                            </a>
-                            {!evt.isApproved && (
-                              <a href={`/events/edit/${evt._id}`} className="text-secondary hover:underline">
-                                Edit
-                              </a>
-                            )}
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
+              
+              <div className="bg-white/30 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden shadow-sm">
+                <div className="overflow-x-auto">
+                  <table className="min-w-full divide-y divide-white/20">
+                    <thead className="bg-white/40">
+                      <tr>
+                        {["Title", "Date", "Venue", "Status", "Actions"].map((h) => (
+                          <th
+                            key={h}
+                            className="px-6 py-3 text-left text-xs font-medium text-primary/80 uppercase tracking-wider"
+                          >
+                            {h}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/10">
+                      {Array.isArray(events) && events.map((evt) => {
+                        const status = evt.isApproved
+                          ? new Date(evt.date) < new Date()
+                            ? "completed"
+                            : "approved"
+                          : "pending";
+                        return (
+                          <tr key={evt._id} className="hover:bg-white/20 transition-colors duration-150">
+                            <td className="px-6 py-4 whitespace-nowrap font-medium text-primary">
+                              <div className="flex items-center">
+                                <div className="flex-shrink-0 h-10 w-10 bg-white/50 rounded-lg flex items-center justify-center mr-3">
+                                  <FaCalendarAlt className="text-primary" />
+                                </div>
+                                <div>
+                                  <div className="text-sm font-medium">{evt.title}</div>
+                                  <div className="text-xs text-primary/60">{evt.registrations || 0} participants</div>
+                                </div>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-secondary/80">
+                              {new Date(evt.date).toLocaleDateString()}
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-secondary/80">
+                              {evt.venue}
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap">
+                              <span className={`px-3 py-1 rounded-full text-xs font-semibold ${STATUS_COLORS[status]}`}>
+                                {status.charAt(0).toUpperCase() + status.slice(1)}
+                              </span>
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm">
+                              <div className="flex space-x-2 justify-end">
+                                <a 
+                                  href={`/events/${evt._id}`} 
+                                  className="text-primary hover:text-primary-button transition-colors px-2 py-1 rounded"
+                                >
+                                  View
+                                </a>
+                                {!evt.isApproved && (
+                                  <a 
+                                    href={`/events/edit/${evt._id}`} 
+                                    className="text-primary hover:text-primary-button transition-colors px-2 py-1 rounded"
+                                  >
+                                    Edit
+                                  </a>
+                                )}
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+                {events.length === 0 && (
+                  <div className="text-center py-8">
+                    <p className="text-secondary/80">No events found. Create your first event!</p>
+                  </div>
+                )}
               </div>
             </div>
 
             {/* Sidebar */}
             <div className="space-y-6">
+              {/* Quick Actions */}
               <div>
-                <h2 className="text-lg font-bold text-primary mb-3 flex items-center">
-                  <FaBell className="mr-2" /> QUICK ACTIONS
+                <h2 className="text-lg font-bold text-primary mb-4 flex items-center">
+                  <FaBell className="mr-2 text-primary-button" /> QUICK ACTIONS
                 </h2>
                 <div className="space-y-3">
                   {[
-                    { label: "Create New Event", href: "/create-event", icon: <FaPlus className="mr-2" /> },
-                    { label: "Participant List", href: "/participants", icon: <FaList className="mr-2" /> },
-                    { label: "Review Feedback", href: "/feedback", icon: <FaCommentDots className="mr-2" /> },
+                    { label: "Create New Event", href: "/create-event", icon: <FaPlus className="mr-3" /> },
+                    { label: "Participant List", href: "/participants", icon: <FaList className="mr-3" /> },
+                    { label: "Review Feedback", href: "/feedback", icon: <FaCommentDots className="mr-3" /> },
                   ].map((act) => (
                     <a
                       key={act.label}
                       href={act.href}
-                      className="flex items-center px-4 py-3 bg-white/30 backdrop-blur-md border rounded-xl hover:bg-primary-button/20 text-secondary"
+                      className="flex items-center justify-between px-4 py-3 bg-white/30 backdrop-blur-md border border-white/20 rounded-lg hover:bg-primary-button/10 text-secondary transition-colors duration-300 group"
                     >
-                      {act.icon}
-                      {act.label}
+                      <div className="flex items-center">
+                        <span className="group-hover:text-primary-button transition-colors duration-300">
+                          {act.icon}
+                        </span>
+                        <span className="font-medium">{act.label}</span>
+                      </div>
+                      <FaChevronRight className="w-3 h-3 text-primary/50 group-hover:text-primary-button transition-colors duration-300" />
                     </a>
                   ))}
                 </div>
               </div>
 
+              {/* Notifications */}
               <div>
-                <h2 className="text-lg font-bold text-primary mb-3 flex items-center">
-                  <FaBell className="mr-2" /> NOTIFICATIONS
+                <h2 className="text-lg font-bold text-primary mb-4 flex items-center">
+                  <FaBell className="mr-2 text-primary-button" /> RECENT ACTIVITY
                 </h2>
-                <div className="bg-white/30 backdrop-blur-md rounded-2xl border p-4 space-y-3">
+                <div className="bg-white/30 backdrop-blur-md rounded-xl border border-white/20 p-4 space-y-3 shadow-sm">
                   {notifications.length === 0 ? (
-                    <p className="text-center text-secondary/80 py-4">No notifications</p>
+                    <div className="text-center py-6">
+                      <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-white/40 mb-3">
+                        <FaBell className="text-primary/60" />
+                      </div>
+                      <h3 className="text-sm font-medium text-primary">No notifications</h3>
+                      <p className="mt-1 text-xs text-primary/60">Activity will appear here</p>
+                    </div>
                   ) : (
                     notifications.map((n) => (
-                      <div key={n.id} className="flex items-start gap-3 hover:bg-white/30 p-2 rounded-lg">
-                        <FaCheckCircle className="w-4 h-4 text-primary" />
-                        <div>
-                          <p className="text-sm text-primary">{n.message}</p>
-                          <p className="text-xs text-secondary/60 mt-1">{n.time}</p>
+                      <div 
+                        key={n.id} 
+                        className="flex items-start gap-3 hover:bg-white/20 p-3 rounded-lg transition-colors duration-150"
+                      >
+                        <div className="flex-shrink-0 mt-1">
+                          <div className="h-8 w-8 rounded-full bg-white/40 flex items-center justify-center">
+                            <FaCheckCircle className="w-3 h-3 text-primary-button" />
+                          </div>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-medium text-primary truncate">{n.message}</p>
+                          <p className="text-xs text-primary/60 mt-1">{n.time}</p>
                         </div>
                       </div>
                     ))
